@@ -3,12 +3,12 @@
     right: 0px;
     bottom: 0px;
     margin: 0px;
-    height: calc(100% - 50px);
+    height: calc(100% - 30px);
     background-color: #7A7A7A;
 }
 
 .backDrop.opened {
-    width: calc(100% - 300px);
+    width: calc(100% - 350px);
 }
 
 .backDrop.closed {
