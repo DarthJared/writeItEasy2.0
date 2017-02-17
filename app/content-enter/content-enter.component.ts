@@ -1,4 +1,4 @@
-import {Component, View} from "angular2/core";
+import {Component} from "angular2/core";
 import {PaperBack} from "../paper-back/paper-back.component";
 
 @Component({
