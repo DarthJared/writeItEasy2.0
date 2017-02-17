@@ -1,0 +1,16 @@
+.backDrop {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px;
+    height: calc(100% - 50px);
+    background-color: #7A7A7A;
+}
+
+.backDrop.opened {
+    width: calc(100% - 300px);
+}
+
+.backDrop.closed {
+    width: 100%;
+}

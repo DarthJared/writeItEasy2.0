@@ -1,6 +1,11 @@
 .sideBar {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
     width: 300px;
     height: 100%;
     background-color: #E4E4E4;
-    box-shadow: 3px 0px 5px #888888;
+    box-shadow: 2px 0px 2px #222222;
+    z-index: 99999;
 }

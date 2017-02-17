@@ -1,12 +1,15 @@
 import {Component, View} from "angular2/core";
 import {DocwriterService} from "./docwriter.service";
 import {ConfigBar} from "./config-bar/config-bar.component";
+import {FormatBar} from "./format-bar/format-bar.component";
+import {ContentEnter} from "./content-enter/content-enter.component";
 
 @Component({
    selector: 'my-app',
    providers: [DocwriterService],
    templateUrl: './app/app.component.html',
-   directives: [ConfigBar]
+   styleUrls: ['./app/app.component.css'],
+   directives: [ConfigBar, FormatBar, ContentEnter]
 })
 
 export class AppComponent {
