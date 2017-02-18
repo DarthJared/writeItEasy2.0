@@ -10,3 +10,6 @@
     z-index: 998;
     overflow-y: scroll;
 }
+.sectionTitle {
+    font-family: "OpenSans", Helvetica, Arial, sans-serif;
+}

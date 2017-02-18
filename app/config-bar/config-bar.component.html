@@ -1,5 +1,5 @@
 <div class="sideBar">
-    <div *ngFor="let section in configOptions.options.sections">    
-        {{section.title}}
+    <div *ngFor="#section of configOptions.options.sections">    
+        <div class="sectionTitle">{{section.title}}</div>
     </div>
 </div>
