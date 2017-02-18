@@ -1,1 +1,5 @@
-<div class="sideBar"></div>
+<div class="sideBar">
+    <div *ngFor="let section in configOptions.options.sections">    
+        {{section.title}}
+    </div>
+</div>

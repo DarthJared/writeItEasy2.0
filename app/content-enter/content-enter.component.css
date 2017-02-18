@@ -5,6 +5,7 @@
     margin: 0px;
     height: calc(100% - 30px);
     background-color: #7A7A7A;
+    overflow-y: scroll;
 }
 
 .backDrop.opened {

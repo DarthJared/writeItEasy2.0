@@ -1,5 +1,5 @@
 import {Component} from "angular2/core";
-import {DocwriterService} from "./docwriter.service";
+import {DocwriterService} from "./services/docwriter.service";
 import {ConfigBar} from "./config-bar/config-bar.component";
 import {FormatBar} from "./format-bar/format-bar.component";
 import {ContentEnter} from "./content-enter/content-enter.component";
@@ -14,14 +14,9 @@ import {ContentEnter} from "./content-enter/content-enter.component";
 
 export class AppComponent {
   constructor(private docwriterService: DocwriterService) { }  
-  //docwriterService = DocwriterService;
+
   writeIt() {
-    // var archiver = require('archiver');
-    // var fs = require('fs');
-    //console.log("write");
     this.docwriterService.writeDocument(this.samplePaperObj);
-
-
   }
 
   samplePaperObj = {

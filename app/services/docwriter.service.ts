@@ -1,6 +1,4 @@
 import { Injectable } from 'angular2/core';
-//import * as fs from 'fs';
-//import * as archiver from 'archiver';
 
 @Injectable()
 export class DocwriterService {
