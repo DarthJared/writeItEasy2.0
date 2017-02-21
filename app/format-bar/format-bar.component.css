@@ -1,8 +1,52 @@
+.formatButton {
+    font-size: 27px;
+    color: #333333;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
+    background-color: #E9E9E9;
+    border-radius: 5px;
+    border: solid 1px #CCCCCC;
+}
+.quoteButton {
+    margin-left: 386px;
+    margin-top: -32px;
+    margin-right: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
+    background-color: #E9E9E9;
+    border-radius: 5px;
+    border: solid 1px #CCCCCC;
+    width: 54px;
+    height: 27.2px;
+}
+.formatButton:hover, .quoteButton:hover {
+    background-color: #AAAAAA;
+    border: solid 1px #888888;
+}
+.formatButton:active, .quoteButton:active {
+    background-color: #999999;
+    border: solid 1px #888888;
+}
+.formatButton.selected {
+    background-color: #BBBBBB; 
+    border: solid 1px #888888;
+}
+.formatButton.selected:hover {
+    background-color: #AAAAAA; 
+    border: solid 1px #888888;
+}
+.formatButton.selected:active {
+    background-color: #999999; 
+    border: solid 1px #888888;
+}
 .topBar, .topBarOuter {
     position: absolute;
     top: 0px;
     right: 0px;
     height: 30px;
+    padding-left: 22px;
     background-color: #F7F6F6;
 }
 .topBar {    
@@ -10,17 +54,50 @@
     z-index: 997;
 }
 .topBar.opened {
-    width: calc(100% - 350px);
+    width: calc(100% - 372px);
 }
 .topBar.closed {
-    width: 100%;
+    width: calc(100% - 22px);
 }
 .topBarOuter {
     z-index: 999;
+    overflow-y: scroll;
 }
 .topBarOuter.opened {
-    width: calc(100% - 350px);
+    width: calc(100% - 372px);
 }
 .topBarOuter.closed {
-    width: 100%;
+    width: calc(100% - 22px);
+}
+
+.fontSelect {
+    margin-top: -20px;
+}
+
+.moreFormatButtons {
+    margin-left: 307px;
+    margin-top: -24px;
+}
+
+.fontOptions {
+    margin-left: 120px;
+    margin-top: -27px;
+}
+
+.firstQuote {
+    -webkit-transform: rotate(180deg);
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(90,90,90,0.5); 
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(90,90,90,0.5); 
 }

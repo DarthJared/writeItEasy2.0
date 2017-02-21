@@ -85,81 +85,7 @@ export class ConfigOptionService {
                 name: 'header',
                 title: 'Header',
                 hideUntil: 'Include Header',
-                fields: [
-                    {
-                        name: 'firstPageConfig',
-                        displayName: 'First Page',
-                        inputType: 'newSection',
-                        fields: [
-                            {
-                                name: 'firstPageDifferent',
-                                displayName: 'Different First Page',
-                                inputType: 'toggle'
-                            },
-                            {
-                                name: 'useRunningHead',
-                                displayName: 'Use "Running head:"',
-                                inputType: 'toggle',
-                                hideUntil: [
-                                    'firstPageDifferent'
-                                ]
-                            },
-                            {
-                                name: 'moreDifferent',
-                                displayName: 'More Differences',
-                                inputType: 'toggle',
-                                hideUntil: [
-                                    'firstPageDifferent'
-                                ]
-                            },
-                            {
-                                name: 'left',
-                                displayName: 'Left',
-                                inputType: 'radioInput',
-                                hideUntil: [
-                                    'firstPageDifferent',
-                                    'moreDifferent'
-                                ],
-                                options: [
-                                    {
-                                        title: 'Paper Title',
-                                        type: 'text'
-                                    },
-                                    {
-                                        title: 'Page Number',
-                                        type: 'none'
-                                    },
-                                    {
-                                        title: 'Other Text',
-                                        type: 'text'
-                                    }
-                                ]
-                            },
-                            {
-                                name: 'right',
-                                displayName: 'Right',
-                                inputType: 'radioInput',
-                                hideUntil: [
-                                    'firstPageDifferent',
-                                    'moreDifferent'
-                                ],
-                                options: [
-                                    {
-                                        title: 'Paper Title',
-                                        type: 'text'
-                                    },
-                                    {
-                                        title: 'Page Number',
-                                        type: 'none'
-                                    },
-                                    {
-                                        title: 'Other Text',
-                                        type: 'text'
-                                    }
-                                ]
-                            }
-                        ]
-                    },
+                fields: [                    
                     {
                         name: 'left',
                         displayName: 'Left',
@@ -197,6 +123,80 @@ export class ConfigOptionService {
                                 type: 'text'
                             }
                         ]
+                    },
+                    {
+                        name: 'firstPageConfig',
+                        displayName: 'First Page',
+                        inputType: 'newSection',
+                        fields: [
+                            {
+                                name: 'firstPageDifferent',
+                                displayName: 'Different First Page',
+                                inputType: 'toggle'
+                            },
+                            {
+                                name: 'useRunningHead',
+                                displayName: 'Use "Running head:"',
+                                inputType: 'toggle',
+                                hideUntil: [
+                                    'firstPageDifferent'
+                                ]
+                            },
+                            {
+                                name: 'moreDifferent',
+                                displayName: 'More Differences',
+                                inputType: 'toggle',
+                                hideUntil: [
+                                    'firstPageDifferent'
+                                ]
+                            },
+                            {
+                                name: 'firstLeft',
+                                displayName: 'First Page Left',
+                                inputType: 'radioInput',
+                                hideUntil: [
+                                    'firstPageDifferent',
+                                    'moreDifferent'
+                                ],
+                                options: [
+                                    {
+                                        title: 'Paper Title',
+                                        type: 'text'
+                                    },
+                                    {
+                                        title: 'Page Number',
+                                        type: 'none'
+                                    },
+                                    {
+                                        title: 'Other Text',
+                                        type: 'text'
+                                    }
+                                ]
+                            },
+                            {
+                                name: 'firstRight',
+                                displayName: 'First Page Right',
+                                inputType: 'radioInput',
+                                hideUntil: [
+                                    'firstPageDifferent',
+                                    'moreDifferent'
+                                ],
+                                options: [
+                                    {
+                                        title: 'Paper Title',
+                                        type: 'text'
+                                    },
+                                    {
+                                        title: 'Page Number',
+                                        type: 'none'
+                                    },
+                                    {
+                                        title: 'Other Text',
+                                        type: 'text'
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
@@ -207,12 +207,14 @@ export class ConfigOptionService {
                 fields: [
                     {
                         name: 'summaryAbstractOwnPage',
-                        displayName: 'On its Own Page',
+                        optionName: 'On its Own Page',
+                        displayName: 'Separate Page',
                         inputType: 'toggle'
                     },
                     {
                         name: 'summaryAbstractIncludeLabel',
-                        displayName: 'Include Section Label',
+                        displayName: 'Section Label',
+                        optionName: 'Include Section Label',
                         inputType: 'toggle'
                     }
                 ]
@@ -224,7 +226,7 @@ export class ConfigOptionService {
                 fields: [
                     {
                         name: 'betweenSections',
-                        title: 'Between Sections',
+                        displayName: 'Between Sections',
                         inputType: 'radio',
                         options: [
                             'Blank Line Between Each Section',
@@ -234,7 +236,8 @@ export class ConfigOptionService {
                     },
                     {
                         name: 'bodyIncludeSectionLabels',
-                        title: 'Include Section Labels',
+                        displayName: 'Section Labels',
+                        optionName: 'Include Section Labels',
                         inputType: 'toggle'
                     }
                 ]
@@ -246,12 +249,14 @@ export class ConfigOptionService {
                 fields: [
                     {
                         name: 'conclusionOwnPage',
-                        displayName: 'On its Own Page',
+                        displayName: 'Separate Page',
+                        optionName: 'On its Own Page',
                         inputType: 'toggle'
                     },
                     {
                         name: 'conclusionIncludeLabel',
-                        displayName: 'Include Section Label',
+                        displayName: 'Section Label',
+                        optionName: 'Include Section Label',
                         inputType: 'toggle'
                     }
                 ]
@@ -262,21 +267,26 @@ export class ConfigOptionService {
                 hideUntil: 'Include References/Works Cited',
                 fields: [
                     {
+                        name: 'referencesOwnPage',
+                        displayName: 'Separate Page',
+                        optionName: 'On its Own Page',
+                        inputType: 'toggle'
+                    },
+                    {
                         name: 'referencesIncludeLabel',
-                        displayName: 'Include Section Label',
+                        displayName: 'Section Label',
+                        optionName: 'Include Section Label',
                         inputType: 'toggleInput',
                         options: [
                             {
-                                title: 'References Label',
+                                title: 'Include Section Label',
+                                placeholder: 'Enter Section Label here...',
                                 type: 'text'
                             }
                         ]
                     }
                 ]
             }
-
-
-
         ]
     }
 }
