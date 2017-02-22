@@ -1,3 +1,6 @@
+.formatButtons {
+    position: absolute;
+}
 .formatButton {
     font-size: 27px;
     color: #333333;
@@ -10,8 +13,9 @@
     border: solid 1px #CCCCCC;
 }
 .quoteButton {
+    position: absolute;
     margin-left: 386px;
-    margin-top: -32px;
+    /*margin-top: -32px;*/
     margin-right: 2px;
     padding-left: 1px;
     padding-right: 1px;
@@ -75,13 +79,15 @@
 }
 
 .moreFormatButtons {
+    position: absolute;
     margin-left: 307px;
-    margin-top: -24px;
+    /*margin-top: -24px;*/
 }
 
 .fontOptions {
+    position: absolute;
     margin-left: 120px;
-    margin-top: -27px;
+    margin-top: 3px;
 }
 
 .firstQuote {
