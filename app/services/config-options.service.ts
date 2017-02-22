@@ -4,6 +4,44 @@ import { Injectable } from 'angular2/core';
 export class ConfigOptionService {
     constructor() { } 
 
+    paperSettings = {
+        paperTitle: 'My Paper',
+        apaMla: '',
+        includeTitle: false,
+        includeHeader: false,
+        includeAbstractSummary: false,
+        includeConclusion: false,
+        includeReferencesWorksCited: false,
+        titleInfoIncludeTitle: false,
+        titleInfoIncludeName: false,
+        titleInfoIncludeClass: false,
+        titleInfoIncludeProfessor: false,
+        titleInfoIncludeSchool: false,
+        titleInfoIncludeOtherText: false,
+        titleInfoAlign: '',
+        titleInfoPos: '',
+        headerLeft: '',
+        headerLeftInput: '',
+        headerRight: '',
+        headerRightInput: '',
+        headerDifferentFirstPage: false,
+        headerUseRunningHeader: false,
+        headerMoreDifferent: false,
+        headerFirstLeft: '',
+        headerFirstLeftInput: '',
+        headerFirstRight: '',
+        headerFirstRightInput: '',
+        summaryOwnPage: false,
+        summaryIncludeSectionLabel: false,
+        bodyBetweenSections: '',
+        bodyIncludeSectionLabels: false,
+        conclusionOwnPage: false,
+        conclusionIncludeLabel: false,
+        referencesOwnPage: false,
+        referencesIncludeLabel: false,
+        referencesLabelInput: ''
+    };
+
     options = {
         sections: [
             { 
@@ -22,8 +60,14 @@ export class ConfigOptionService {
                         displayName: 'APA or MLA',
                         inputType: 'radio',
                         options: [
-                            'APA',
-                            'MLA'
+                            {
+                                name: 'apa',
+                                title: 'APA'
+                            },
+                            {
+                                name: 'mla',
+                                title: 'MLA'
+                            }
                         ]
                     },
                     {
@@ -32,11 +76,26 @@ export class ConfigOptionService {
                         inputType: 'checkbox',
                         reorderable: false,
                         options: [
-                            'Include Title',
-                            'Include Header',
-                            'Include Abstract/Summary',
-                            'Include Conclusion',
-                            'Include References/Works Cited'
+                            {
+                                name: 'includeTitle',
+                                title: 'Include Title'
+                            },
+                            {
+                                name: 'includeHeader',
+                                title: 'Include Header'
+                            },
+                            {
+                                name: 'includeAbstractSummary',
+                                title: 'Include Abstract/Summary'
+                            },
+                            {
+                                name: 'includeConclusion',
+                                title: 'Include Conclusion'
+                            },
+                            {
+                                name: 'includeReferencesWorksCited',
+                                title: 'Include References/Works Cited'
+                            }
                         ]
                     }
                 ]
@@ -52,12 +111,30 @@ export class ConfigOptionService {
                         inputType: 'checkbox',
                         reorderable: true,
                         options: [
-                            'Include Title',
-                            'Include Name',
-                            'Include Class',
-                            'Include Professor',
-                            'Include School',
-                            'Include Other Text'
+                            {
+                                name: 'titleInfoIncludeTitle',
+                                title: 'Include Title'
+                            },
+                            {
+                                name: 'titleInfoIncludeName',
+                                title: 'Include Name'
+                            },
+                            {
+                                name: 'titleInfoIncludeClass',
+                                title: 'Include Class'
+                            },
+                            {
+                                name: 'titleInfoIncludeProfessor',
+                                title: 'Include Professor'
+                            },
+                            {
+                                name: 'titleInfoIncludeSchool',
+                                title: 'Include School'
+                            },
+                            {
+                                name: 'titleInfoIncludeOtherText',
+                                title: 'Include Other Text'
+                            }
                         ]
                     },
                     {
@@ -65,9 +142,18 @@ export class ConfigOptionService {
                         displayName: 'Alignment',
                         inputType: 'radio',
                         options: [
-                            'Left',
-                            'Center',
-                            'Right'
+                            {
+                                name: 'titleInfoAlignLeft',
+                                title: 'Left'
+                            },
+                            {
+                                name: 'titleInfoAlignCenter',
+                                title: 'Center'
+                            },
+                            {
+                                name: 'titleInfoAlignRight',
+                                title: 'Right'
+                            }
                         ]
                     },
                     {
@@ -75,8 +161,14 @@ export class ConfigOptionService {
                         displayName: 'Information Location',
                         inputType: 'radio',
                         options: [
-                            'Separate Title Page',
-                            'At Top of First Page'
+                            {
+                                name: 'titleInfoSeparatePage',
+                                title: 'Separate Title Page'
+                            },
+                            {
+                                name: 'titleInfoTopFirstPage',
+                                title: 'At Top of First Page'
+                            }
                         ]
                     }
                 ]
@@ -87,38 +179,44 @@ export class ConfigOptionService {
                 hideUntil: 'Include Header',
                 fields: [                    
                     {
-                        name: 'left',
+                        name: 'headerLeft',
                         displayName: 'Left',
                         inputType: 'radioInput',
                         options: [
                             {
+                                name: 'headerLeftPaperTitle',
                                 title: 'Paper Title',
                                 type: 'text'
                             },
                             {
+                                name: 'headerLeftPageNumber',
                                 title: 'Page Number',
                                 type: 'none'
                             },
                             {
+                                name: 'headerLeftOtherText',
                                 title: 'Other Text',
                                 type: 'text'
                             }
                         ]
                     },
                     {
-                        name: 'right',
+                        name: 'headerRight',
                         displayName: 'Right',
                         inputType: 'radioInput',
                         options: [
                             {
+                                name: 'headerRightPaperTitle',
                                 title: 'Paper Title',
                                 type: 'text'
                             },
                             {
+                                name: 'headerRightPageNumber',
                                 title: 'Page Number',
                                 type: 'none'
                             },
                             {
+                                name: 'headerRightOtherText',
                                 title: 'Other Text',
                                 type: 'text'
                             }
@@ -130,12 +228,12 @@ export class ConfigOptionService {
                         inputType: 'newSection',
                         fields: [
                             {
-                                name: 'firstPageDifferent',
+                                name: 'headerDifferentFirstPage',
                                 displayName: 'Different First Page',
                                 inputType: 'toggle'
                             },
                             {
-                                name: 'useRunningHead',
+                                name: 'headerUseRunningHeader',
                                 displayName: 'Use "Running head:"',
                                 inputType: 'toggle',
                                 hideUntil: [
@@ -143,7 +241,7 @@ export class ConfigOptionService {
                                 ]
                             },
                             {
-                                name: 'moreDifferent',
+                                name: 'headerMoreDifferent',
                                 displayName: 'More Differences',
                                 inputType: 'toggle',
                                 hideUntil: [
@@ -151,7 +249,7 @@ export class ConfigOptionService {
                                 ]
                             },
                             {
-                                name: 'firstLeft',
+                                name: 'headerFirstLeft',
                                 displayName: 'First Page Left',
                                 inputType: 'radioInput',
                                 hideUntil: [
@@ -160,21 +258,24 @@ export class ConfigOptionService {
                                 ],
                                 options: [
                                     {
+                                        name: 'headerFirstLeftPaperTitle',
                                         title: 'Paper Title',
                                         type: 'text'
                                     },
                                     {
+                                        name: 'headerFirstLeftPageNumber',
                                         title: 'Page Number',
                                         type: 'none'
                                     },
                                     {
+                                        name: 'headerFirstLeftOtherText',
                                         title: 'Other Text',
                                         type: 'text'
                                     }
                                 ]
                             },
                             {
-                                name: 'firstRight',
+                                name: 'headerFirstRight',
                                 displayName: 'First Page Right',
                                 inputType: 'radioInput',
                                 hideUntil: [
@@ -183,14 +284,17 @@ export class ConfigOptionService {
                                 ],
                                 options: [
                                     {
+                                        name: 'headerFirstRightPaperTitle',
                                         title: 'Paper Title',
                                         type: 'text'
                                     },
                                     {
+                                        name: 'headerFirstRightPageNumber',
                                         title: 'Page Number',
                                         type: 'none'
                                     },
                                     {
+                                        name: 'headerFirstRightOtherText',
                                         title: 'Other Text',
                                         type: 'text'
                                     }
@@ -206,13 +310,13 @@ export class ConfigOptionService {
                 hideUntil: 'Include Abstract/Summary',
                 fields: [
                     {
-                        name: 'summaryAbstractOwnPage',
+                        name: 'summaryOwnPage',
                         optionName: 'On its Own Page',
                         displayName: 'Separate Page',
                         inputType: 'toggle'
                     },
                     {
-                        name: 'summaryAbstractIncludeLabel',
+                        name: 'summaryIncludeSectionLabel',
                         displayName: 'Section Label',
                         optionName: 'Include Section Label',
                         inputType: 'toggle'
@@ -225,13 +329,22 @@ export class ConfigOptionService {
                 hideUntil: 'none',
                 fields: [
                     {
-                        name: 'betweenSections',
+                        name: 'bodyBetweenSections',
                         displayName: 'Between Sections',
                         inputType: 'radio',
                         options: [
-                            'Blank Line Between Each Section',
-                            'Each Section On Its Own Page',
-                            'No Space Between Sections'
+                            {
+                                name: 'bodyBlankLineBetweenSections',
+                                title: 'Blank Line Between Each Section'
+                            },
+                            {
+                                name: 'bodyEachSectionOwnPage',
+                                title: 'Each Section On Its Own Page'
+                            },
+                            {
+                                name: 'bodyNoSpaceBetweenSections',
+                                title: 'No Space Between Sections'
+                            }
                         ]
                     },
                     {

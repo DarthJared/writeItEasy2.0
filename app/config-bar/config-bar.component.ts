@@ -13,15 +13,23 @@ export class ConfigBar implements OnChanges {
   subsections: any = [];
   apaMla: string= "APA";
 
+  paperSettings: any = {};
+
   constructor(private configOptions: ConfigOptionService) { 
+    this.paperSettings = this.configOptions.paperSettings;
     // console.log("started");
   }  
 
-  ngOnChanges() {
+  radioUpdated(fieldName:string, value: any) {
+    this.paperSettings[fieldName] = value.srcElement.checked;
+  }
 
+  ngOnChanges() {
+    console.log("here");
   }
 
   addSection(sectionName: string) {
+    console.log("here2");
     this.sections += sectionName; 
   }
 
