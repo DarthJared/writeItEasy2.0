@@ -20,6 +20,16 @@ export class ConfigBar implements OnChanges {
     // console.log("started");
   }  
 
+  correctEnabled(toCheck) {
+    let correct = true;
+    for (let i = 0; i < toCheck.length; i++) {
+      if (!this.paperSettings[toCheck[i]]) {
+        correct = false;
+      }
+    }
+    return correct;
+  }
+
   radioUpdated(fieldName:string, value: any) {
     this.paperSettings[fieldName] = value.srcElement.checked;
   }

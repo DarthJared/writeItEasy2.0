@@ -15,10 +15,9 @@
 .quoteButton {
     position: absolute;
     margin-left: 386px;
-    /*margin-top: -32px;*/
-    margin-right: 2px;
     padding-left: 1px;
     padding-right: 1px;
+    margin-right: 22px;
     background-color: #E9E9E9;
     border-radius: 5px;
     border: solid 1px #CCCCCC;
@@ -51,6 +50,7 @@
     right: 0px;
     height: 30px;
     padding-left: 22px;
+    padding-right: 22px;
     background-color: #F7F6F6;
 }
 .topBar {    
@@ -58,20 +58,20 @@
     z-index: 997;
 }
 .topBar.opened {
-    width: calc(100% - 372px);
+    width: calc(100% - 394px);
 }
 .topBar.closed {
-    width: calc(100% - 22px);
+    width: calc(100% - 44px);
 }
 .topBarOuter {
     z-index: 999;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 .topBarOuter.opened {
-    width: calc(100% - 372px);
+    width: calc(100% - 394px);
 }
 .topBarOuter.closed {
-    width: calc(100% - 22px);
+    width: calc(100% - 44px);
 }
 
 .fontSelect {
@@ -95,7 +95,8 @@
 }
 
 ::-webkit-scrollbar {
-    width: 1px;
+    height: 3px;
+    width: 0px;
 }
 
 ::-webkit-scrollbar-thumb {
