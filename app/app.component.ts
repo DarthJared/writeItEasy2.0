@@ -3,13 +3,14 @@ import {DocwriterService} from "./services/docwriter.service";
 import {ConfigBar} from "./config-bar/config-bar.component";
 import {FormatBar} from "./format-bar/format-bar.component";
 import {ContentEnter} from "./content-enter/content-enter.component";
+import {WriteButton} from "./write-button/write-button.component";
 
 @Component({
    selector: 'my-app',
    providers: [DocwriterService],
    templateUrl: './app/app.component.html',
    styleUrls: ['./app/app.component.css'],
-   directives: [ConfigBar, FormatBar, ContentEnter]
+   directives: [ConfigBar, FormatBar, ContentEnter, WriteButton]
 })
 
 export class AppComponent {

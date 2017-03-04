@@ -1,6 +1,6 @@
 {
   "name": "writeiteasy2",
-  "version": "2.0.0",
+  "version": "0.0.8",
   "description": "An application that creates MLA and APA formatted papers for you!",
   "main": "main.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "typings": "typings",
     "postinstall": "typings install"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/Jbeagle/writeItEasy2.0",
   "keywords": [
     "Electron",
     "quick",
@@ -19,8 +19,8 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Jared Beagley",
+  "license": "na",
   "dependencies": {
     "@angular/material": "^2.0.0-beta.2",
     "angular2": "2.0.0-beta.7",
@@ -29,6 +29,7 @@
     "dialog": "^0.2.0",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
+    "material-ui": "^0.17.0",
     "path": "^0.12.7",
     "reflect-metadata": "0.1.2",
     "remote": "^0.2.6",
