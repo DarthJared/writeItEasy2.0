@@ -16,6 +16,12 @@ import {WriteButton} from "./write-button/write-button.component";
 export class AppComponent {
   constructor(private docwriterService: DocwriterService) { }  
 
+  configOptions = {};
+
+  updateConfig(configObj) {
+    this.configOptions = configObj;
+  }
+
   writeIt() {
     this.docwriterService.writeDocument(this.samplePaperObj);
   }

@@ -8,7 +8,7 @@
                     <hr>
                     <div class="fieldOptions">
                         <ng-container *ngFor="#option of field.options">
-                            <input class="option" type="radio" [checked]="paperSettings[field.name] === option.name" [name]="field.name" (change)="paperSettings[field.name] = option.name">{{option.title}}
+                            <input class="option" type="radio" [checked]="paperSettings[field.name] === option.name" [name]="field.name" (change)="paperSettings[field.name] = option.name; sendConfigObj();">{{option.title}}
                             <br>
                         </ng-container>
                     </div>                
@@ -17,7 +17,7 @@
                     <div class="fieldTitle">{{field.displayName}}</div>
                     <hr>
                     <div class="fieldEnter">
-                        <input (change)="addSection($event)" class="textInputField option" style="font-size: 12px !important; width: 170px !important;" type="text" [placeholder]="field.placeholder" [(ngModel)]="paperSettings[field.name]">
+                        <input (change)="sendConfigObj()" class="textInputField option" style="font-size: 12px !important; width: 170px !important;" type="text" [placeholder]="field.placeholder" [(ngModel)]="paperSettings[field.name]">
                     </div>
                 </div>
                 <div class="checkboxGroup" *ngIf="field.inputType == 'checkbox' && !field.reorderable">
@@ -25,7 +25,7 @@
                     <hr>
                     <div class="fieldOptions">
                         <ng-container *ngFor="#option of field.options">
-                            <input class="option" type="checkbox" [checked]="paperSettings[option.name]" (change)="paperSettings[option.name] = !paperSettings[option.name]">{{option.title}}
+                            <input class="option" type="checkbox" [checked]="paperSettings[option.name]" (change)="paperSettings[option.name] = !paperSettings[option.name]; sendConfigObj();">{{option.title}}
                             <br>
                         </ng-container>
                     </div>
@@ -37,11 +37,11 @@
                         <table class="radioTable">
                             <tr *ngFor="#option of field.options">
                                 <td class="radioCell">
-                                    <input type="radio" [name]="field.name" [checked]="paperSettings[field.name] === option.name" (change)="paperSettings[field.name] = option.name">{{option.title}}
+                                    <input type="radio" [name]="field.name" [checked]="paperSettings[field.name] === option.name" (change)="paperSettings[field.name] = option.name; sendConfigObj();">{{option.title}}
                                 </td>
                                 <td>
                                     <ng-container *ngIf="paperSettings[field.name] === option.name">
-                                        <input class="textInputField" style="font-size: 12px !important; width: 170px !important;" type="text" *ngIf="option.type == 'text'" [(ngModel)]="paperSettings[field.name + 'Input']" placeholder="Enter {{option.title}} here...">
+                                        <input (change)="sendConfigObj()" class="textInputField" style="font-size: 12px !important; width: 170px !important;" type="text" *ngIf="option.type == 'text'" [(ngModel)]="paperSettings[field.name + 'Input']" placeholder="Enter {{option.title}} here...">
                                     </ng-container>
                                 </td>
                             </tr>
@@ -52,7 +52,7 @@
                     <div class="fieldTitle">{{field.displayName}}</div>
                     <hr>
                     <div class="fieldOptions">
-                        <input type="checkbox" [checked]="paperSettings[field.name]" (change)="paperSettings[field.name] = !paperSettings[field.name]">{{field.optionName}}
+                        <input type="checkbox" [checked]="paperSettings[field.name]" (change)="paperSettings[field.name] = !paperSettings[field.name]; sendConfigObj();">{{field.optionName}}
                     </div>
                 </div>
                 <div class="toggleOption" *ngIf="field.inputType == 'toggleInput'">
@@ -62,10 +62,10 @@
                         <table class="radioTable">
                             <tr *ngFor="#option of field.options">
                                 <td class="radioCell">
-                                    <input type="checkbox" [(ngModel)]="paperSettings[field.name]">{{option.title}}
+                                    <input type="checkbox" [(ngModel)]="paperSettings[field.name]" (change)="sendConfigObj()">{{option.title}}
                                 </td>
                                 <td>
-                                    <input class="textInputField" [(ngModel)]="paperSettings[field.name + 'Input']" style="font-size: 12px !important; width: 170px !important;" type="text" *ngIf="option.type == 'text'" [placeholder]="option.placeholder">
+                                    <input class="textInputField" (change)="sendConfigObj()" [(ngModel)]="paperSettings[field.name + 'Input']" style="font-size: 12px !important; width: 170px !important;" type="text" *ngIf="option.type == 'text'" [placeholder]="option.placeholder">
                                 </td>
                             </tr>
                         </table>
@@ -77,7 +77,7 @@
                     <div class="fieldOptions">
                         <ng-container *ngFor="#newField of field.fields">
                             <div class="fieldOptions" *ngIf="newField.inputType == 'toggle'">
-                                <input class="option" type="checkbox" [checked]="paperSettings[newField.name]" (change)="paperSettings[newField.name] = !paperSettings[newField.name]">{{newField.displayName}}
+                                <input class="option" type="checkbox" [checked]="paperSettings[newField.name]" (change)="paperSettings[newField.name] = !paperSettings[newField.name]; sendConfigObj();">{{newField.displayName}}
                             </div>
                             <div *ngIf="newField.inputType == 'radioInput'">
                                 <div class="fieldTitle">{{newField.displayName}}</div>
@@ -86,10 +86,10 @@
                                     <table class="radioTable">
                                         <tr *ngFor="#option of newField.options">
                                             <td class="radioCell">
-                                                <input type="radio" [name]="newField.name" [checked]="paperSettings[newField.name] === option.name" (change)="paperSettings[newField.name] = option.name">{{option.title}}
+                                                <input type="radio" [name]="newField.name" [checked]="paperSettings[newField.name] === option.name" (change)="paperSettings[newField.name] = option.name; sendConfigObj();">{{option.title}}
                                             </td>
                                             <td>
-                                                <input class="textInputField" style="font-size: 12px !important; width: 170px !important;" type="text" *ngIf="option.type == 'text'" [(ngModel)]="paperSettings[option.name + 'Input']" placeholder="Enter {{option.title}} here...">
+                                                <input (change)="sendConfigObj()" class="textInputField" style="font-size: 12px !important; width: 170px !important;" type="text" *ngIf="option.type == 'text'" [(ngModel)]="paperSettings[option.name + 'Input']" placeholder="Enter {{option.title}} here...">
                                             </td>
                                         </tr>
                                     </table>

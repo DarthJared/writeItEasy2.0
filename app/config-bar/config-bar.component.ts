@@ -1,4 +1,4 @@
-import {Component, OnChanges} from "angular2/core";
+import {Component, OnChanges, Output, EventEmitter} from "angular2/core";
 import {ConfigOptionService} from "./../services/config-options.service";
 
 @Component({
@@ -9,6 +9,7 @@ import {ConfigOptionService} from "./../services/config-options.service";
 })
 
 export class ConfigBar implements OnChanges {
+  @Output() configObj: EventEmitter<string> = new EventEmitter<string>();
   sections: any = [];
   subsections: any = [];
   apaMla: string= "APA";
@@ -28,6 +29,10 @@ export class ConfigBar implements OnChanges {
       }
     }
     return correct;
+  }
+
+  sendConfigObj() {
+    this.configObj.emit(this.paperSettings);
   }
 
   radioUpdated(fieldName:string, value: any) {

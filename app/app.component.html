@@ -1,6 +1,6 @@
 <!--<h2>My First Angular 2 App</h2>
 <button type="button" (click)="writeIt()">Write It!</button>-->
-    <config-bar></config-bar>
+    <config-bar (configObj)="updateConfig($event)"></config-bar>
     <format-bar></format-bar>
     <content-enter></content-enter>
-    <write-button></write-button>
+    <write-button [configOptions]="configOptions"></write-button>
