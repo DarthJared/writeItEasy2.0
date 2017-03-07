@@ -89,7 +89,7 @@
                                                 <input type="radio" [name]="newField.name" [checked]="paperSettings[newField.name] === option.name" (change)="paperSettings[newField.name] = option.name; sendConfigObj();">{{option.title}}
                                             </td>
                                             <td>
-                                                <input (change)="sendConfigObj()" class="textInputField" style="font-size: 12px !important; width: 170px !important;" type="text" *ngIf="option.type == 'text'" [(ngModel)]="paperSettings[option.name + 'Input']" placeholder="Enter {{option.title}} here...">
+                                                <input (change)="sendConfigObj()" class="textInputField" style="font-size: 12px !important; width: 170px !important;" type="text" *ngIf="option.type == 'text'" [(ngModel)]="paperSettings[newField.name + 'Input']" placeholder="Enter {{option.title}} here...">
                                             </td>
                                         </tr>
                                     </table>

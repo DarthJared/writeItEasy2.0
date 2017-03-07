@@ -12,6 +12,7 @@ export class WriteButton {
   constructor(private docwriterService: DocwriterService) { }  
   @Input() configOptions;
   optionsOpen = false;
+  paperObj = {};
   
   showOptions() {
     this.optionsOpen = !this.optionsOpen;
@@ -35,7 +36,115 @@ export class WriteButton {
 
   writeIt() {
     this.optionsOpen = false;
+    this.parseConfig();
+    this.parseContent();
     this.docwriterService.writeDocument(this.samplePaperObj);
+    // this.docwriterService.writeDocument(this.samplePaperObj);
+  }
+
+  parseConfig() {
+    //add apaMla?
+    //add bodyBetweenSections
+    //add support for none in headers
+    this.paperObj['conclusion']['includeLabel'] = this.configOptions.conclusionIncludeLabels;
+    this.paperObj['conclusion']['onOwnPage'] = this.configOptions.conclusionOwnPage;
+     
+    this.paperObj['title'] = this.configOptions.paperTitle;
+    //author needed?
+
+    /*Configure Header*/
+    this.paperObj['includeHeaders'] = this.configOptions.includeHeader;
+    if (this.configOptions.includeHeader) {
+      this.paperObj['headers']['diffFirstPage'] = this.configOptions.headerDifferentFirstPage;
+      //font and size needed
+      this.paperObj['headers']['headers'] = []; 
+      if (this.configOptions.headerDifferentFirstPage) {
+        let headerFirst = {};
+        if (this.configOptions.headerMoreDifferent) {
+          if (this.configOptions.headerFirstLeft == 'headerFirstLeftPaperTitle' || this.configOptions.headerFirstLeft == 'headerFirstLeftOtherText') {
+            headerFirst = {applyTo: 'firstPage', leftType: 'text', left: this.configOptions.headerUseRunningHead ? 'Running head: ' + this.configOptions.headerFirstLeftInput : this.configOptions.headerFirstLeftInput};
+          }
+          else if (this.configOptions.headerFirstLeft == 'headerFirstLeftPageNumber') {
+            headerFirst = {applyTo: 'firstPage', leftType: 'pageNumber'};
+          }
+          else {
+            headerFirst = {applyTo: 'firstPage', leftType: 'none'};
+          }
+          if (this.configOptions.headerFirstRight == 'headerFirstRightPaperTitle' || this.configOptions.headerFirstRight == 'headerFirstRightOtherText') {
+            headerFirst['rightType'] = 'text';
+            headerFirst['right'] = this.configOptions.headerFirstRightInput;
+          }
+          else if (this.configOptions.headerFirstRight == 'headerFirstRightPageNumber') {
+            headerFirst['rightType'] = 'pageNumber';
+          }
+          else {
+            headerFirst['rightType'] = 'none';
+          }
+        }
+        else {
+          if (this.configOptions.headerLeft == 'headerLeftPaperTitle' || this.configOptions.headerLeft == 'headerLeftOtherText') {
+            headerFirst = {applyTo: 'firstPage', leftType: 'text', left: this.configOptions.headerUseRunningHead ? 'Running head: ' + this.configOptions.headerLeftInput : this.configOptions.headerLeftInput};
+          }
+          else if (this.configOptions.headerLeft == 'headerLeftPageNumber') {
+            headerFirst = {applyTo: 'firstPage', leftType: 'pageNumber'};
+          }
+          else {
+            headerFirst = {applyTo: 'firstPage', leftType: 'none'};
+          }
+          if (this.configOptions.headerRight == 'headerRightPaperTitle' || this.configOptions.headerRight == 'headerRightOtherText') {
+            headerFirst['rightType'] = 'text';
+            headerFirst['right'] = this.configOptions.headerRightInput;
+          }
+          else if (this.configOptions.headerRight == 'headerRightPageNumber') {
+            headerFirst['rightType'] = 'pageNumber';
+          }
+          else {
+            headerFirst['rightType'] = 'none';
+          }
+        }
+        this.paperObj['headers']['headers'].push(headerFirst)
+      }
+      let headerMain = {};
+      if (this.configOptions.headerLeft == 'headerLeftPaperTitle' || this.configOptions.headerLeft == 'headerLeftOtherText') {
+        headerMain = {applyTo: 'default', leftType: 'text', left: this.configOptions.headerLeftInput};
+      }
+      else if (this.configOptions.headerLeft == 'headerLeftPageNumber') {
+        headerMain = {applyTo: 'default', leftType: 'pageNumber'};
+      }
+      else {
+        headerMain = {applyTo: 'default', leftType: 'none'};
+      }
+      if (this.configOptions.headerRight == 'headerRightPaperTitle' || this.configOptions.headerRight == 'headerRightOtherText') {
+        headerMain['rightType'] = 'text';
+        headerMain['right'] = this.configOptions.headerRightInput;
+      }
+      else if (this.configOptions.headerRight == 'headerRightPageNumber') {
+        headerMain['rightType'] = 'pageNumber';
+      }
+      else {
+        headerMain['rightType'] = 'none';
+      }
+      this.paperObj['headers']['headers'].push(headerMain)
+    }
+
+    /*Configure Title Info*/
+    this.paperObj['titleInfo']['onOwnPage'] = this.configOptions.titleInfoPos == 'titleInfoSeparatePage';
+    let titleAlign = '';
+    if (this.configOptions.titleInfoAlign == 'titleInfoAlignLeft') {
+      titleAlign = 'left';
+    }
+    else if (this.configOptions.titleInfoAlign == 'titleInfoAlignCenter') {
+      titleAlign = 'center';
+    }
+    else if (this.configOptions.titleInfoAlign == 'titleInfoAlignRight') {
+      titleAlign = 'right';
+    }
+    this.paperObj['titleInfo']['alignment'] = titleAlign;
+    //font, size, bold, underline, and italicize needed
+  }
+
+  parseContent() {
+
   }
 
   samplePaperObj = {
@@ -64,12 +173,12 @@ export class WriteButton {
     titleInfo:
     {
       onOwnPage: true,
-          alignment: "center",
+      alignment: "center",
       font: "Times New Roman",
-          fontSize: 12,
-          bold: false,
-          underline: false,
-          italicize: false,
+      fontSize: 12,
+      bold: false,
+      underline: false,
+      italicize: false,
       fields: [
         {
           name: "Title",
