@@ -12,7 +12,142 @@ export class WriteButton {
   constructor(private docwriterService: DocwriterService) { }  
   @Input() configOptions;
   optionsOpen = false;
-  paperObj = {};
+  headerObj = {
+    applyTo: "",
+    leftType: "",
+    rightType: "",
+    left: ""
+  };
+  titleFieldObj = {
+    name: "",
+    value: ""
+  }
+  paraObj = {
+    alignment: "",
+    spacing: 0,
+    topIndent: 0,
+    bottomIndent: 0,
+    formatSections: []
+  };
+  formatSectObj = {
+    bold: false,
+    underline: false,
+    italicize: false,
+    fontSize: 12,
+    font: "Times New Roman",
+    content: ""
+  };
+  sectionObj = {
+    sectionLevel: 0,
+    onOwnPage: false,
+    includeLabel: false,
+    label: {			
+      labelText: "",
+      font: "Times New Roman",
+      fontSize: 12,
+      bold: false,
+      underline: false,
+      italicize: false,
+      alignment: "",
+      position: ""
+    },
+    paragraphs: []
+  };
+  citationObj = {
+    keyData: "",
+    fields: [],
+    inText: "",
+    quotations: []
+  };
+  citationFieldObj = {
+    name: "",
+    value: "",
+    bold: false,
+    underline: false,
+    italicize: false,
+    inQuotes: false,
+    inParens: false
+  };
+  quotationObj = {
+    content: "",
+    block: false
+  };
+  paperObj =  {
+    title: "",
+    author: "",
+    headers:  {
+      includeHeaders: false,
+      diffFirstPage: false,
+      font: "Times New Roman",
+      fontSize: 12,
+      headers: []
+    },	
+    titleInfo:
+    {
+      onOwnPage: false,
+      alignment: "",
+      font: "Times New Roman",
+      fontSize: 12,
+      bold: false,
+      underline: false,
+      italicize: false,
+      fields: []
+    },
+    summaryAbstract: {
+      onOwnPage: false,
+      includeLabel: false,
+      label: {			
+        labelText: "",
+        font: "Times New Roman",
+        fontSize: 12,
+        bold: false,
+        underline: false,
+        italicize: false,
+        alignment: "",
+        position: ""
+      },		
+      paragraphs: []
+    },
+    body: {
+      sections: []		
+    },
+    conclusion: {
+      onOwnPage: false,
+      includeLabel: false,
+      label: {			
+        labelText: "",
+        font: "Times New Roman",
+        fontSize: 12,
+        bold: false,
+        underline: false,
+        italicize: false,
+        alignment: "",
+        position: ""
+      },
+      paragraphs: []
+    },	
+    references: {
+      onOwnPage: false,
+      includeLabel: false,
+      alignment: "",
+      topIndent: 0,
+      bottomIndent: 0,
+      fontSize: 12,
+      font: "Times New Roman",
+      spacing: 0,
+      label: {			
+        labelText: "",
+        font: "Times New Roman",
+        fontSize: 12,
+        bold: false,
+        underline: false,
+        italicize: false,
+        alignment: "",
+        position: ""
+      },	
+      citations: []
+    }
+  };
   
   showOptions() {
     this.optionsOpen = !this.optionsOpen;
