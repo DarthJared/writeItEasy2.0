@@ -16,7 +16,8 @@ export class WriteButton {
     applyTo: "",
     leftType: "",
     rightType: "",
-    left: ""
+    left: "",
+    right: ""
   };
   titleFieldObj = {
     name: "",
@@ -188,82 +189,98 @@ export class WriteButton {
     //author needed?
 
     /*Configure Header*/
-    this.paperObj['includeHeaders'] = this.configOptions.includeHeader;
+    this.paperObj.headers.includeHeaders = this.configOptions.includeHeader;
     if (this.configOptions.includeHeader) {
-      this.paperObj['headers']['diffFirstPage'] = this.configOptions.headerDifferentFirstPage;
+      this.paperObj.headers.diffFirstPage = this.configOptions.headerDifferentFirstPage;
       //font and size needed
-      this.paperObj['headers']['headers'] = []; 
+      // this.paperObj['headers']['headers'] = []; 
       if (this.configOptions.headerDifferentFirstPage) {
-        let headerFirst = {};
+        let headerFirst = JSON.parse(JSON.stringify(this.headerObj));
         if (this.configOptions.headerMoreDifferent) {
           if (this.configOptions.headerFirstLeft == 'headerFirstLeftPaperTitle' || this.configOptions.headerFirstLeft == 'headerFirstLeftOtherText') {
-            headerFirst = {applyTo: 'firstPage', leftType: 'text', left: this.configOptions.headerUseRunningHead ? 'Running head: ' + this.configOptions.headerFirstLeftInput : this.configOptions.headerFirstLeftInput};
+            headerFirst.applyTo = 'firstPage';
+            headerFirst.leftType = 'text';
+            headerFirst.left = this.configOptions.headerUseRunningHead 
+              ? 'Running head: ' + this.configOptions.headerFirstLeftInput 
+              : this.configOptions.headerFirstLeftInput;
           }
           else if (this.configOptions.headerFirstLeft == 'headerFirstLeftPageNumber') {
-            headerFirst = {applyTo: 'firstPage', leftType: 'pageNumber'};
+            headerFirst.applyTo = 'firstPage';
+            headerFirst.leftType = 'pageNumber';
           }
           else {
-            headerFirst = {applyTo: 'firstPage', leftType: 'none'};
+            headerFirst.applyTo = 'firstPage';
+            headerFirst.leftType = 'none';
           }
           if (this.configOptions.headerFirstRight == 'headerFirstRightPaperTitle' || this.configOptions.headerFirstRight == 'headerFirstRightOtherText') {
-            headerFirst['rightType'] = 'text';
-            headerFirst['right'] = this.configOptions.headerFirstRightInput;
+            headerFirst.rightType = 'text';
+            headerFirst.right = this.configOptions.headerFirstRightInput;
           }
           else if (this.configOptions.headerFirstRight == 'headerFirstRightPageNumber') {
-            headerFirst['rightType'] = 'pageNumber';
+            headerFirst.rightType = 'pageNumber';
           }
           else {
-            headerFirst['rightType'] = 'none';
+            headerFirst.rightType = 'none';
           }
         }
         else {
           if (this.configOptions.headerLeft == 'headerLeftPaperTitle' || this.configOptions.headerLeft == 'headerLeftOtherText') {
-            headerFirst = {applyTo: 'firstPage', leftType: 'text', left: this.configOptions.headerUseRunningHead ? 'Running head: ' + this.configOptions.headerLeftInput : this.configOptions.headerLeftInput};
+            headerFirst.applyTo = 'firstPage';
+            headerFirst.leftType = 'text';
+            headerFirst.left = this.configOptions.headerUseRunningHead 
+              ? 'Running head: ' + this.configOptions.headerLeftInput 
+              : this.configOptions.headerLeftInput;
           }
           else if (this.configOptions.headerLeft == 'headerLeftPageNumber') {
-            headerFirst = {applyTo: 'firstPage', leftType: 'pageNumber'};
+            headerFirst.applyTo = 'firstPage';
+            headerFirst.leftType = 'pageNumber';
           }
           else {
-            headerFirst = {applyTo: 'firstPage', leftType: 'none'};
+            headerFirst.applyTo = 'firstPage';
+            headerFirst.leftType = 'none';
           }
           if (this.configOptions.headerRight == 'headerRightPaperTitle' || this.configOptions.headerRight == 'headerRightOtherText') {
-            headerFirst['rightType'] = 'text';
-            headerFirst['right'] = this.configOptions.headerRightInput;
+            headerFirst.rightType = 'text';
+            headerFirst.right = this.configOptions.headerRightInput;
           }
           else if (this.configOptions.headerRight == 'headerRightPageNumber') {
-            headerFirst['rightType'] = 'pageNumber';
+            headerFirst.rightType = 'pageNumber';
           }
           else {
-            headerFirst['rightType'] = 'none';
+            headerFirst.rightType = 'none';
           }
         }
-        this.paperObj['headers']['headers'].push(headerFirst)
+        this.paperObj.headers.headers.push(headerFirst)
       }
-      let headerMain = {};
+      let headerMain = JSON.parse(JSON.stringify(this.headerObj));;
       if (this.configOptions.headerLeft == 'headerLeftPaperTitle' || this.configOptions.headerLeft == 'headerLeftOtherText') {
-        headerMain = {applyTo: 'default', leftType: 'text', left: this.configOptions.headerLeftInput};
+        headerMain.applyTo = 'default';
+        headerMain.leftType = 'text';
+        headerMain.left = this.configOptions.headerLeftInput;
       }
       else if (this.configOptions.headerLeft == 'headerLeftPageNumber') {
-        headerMain = {applyTo: 'default', leftType: 'pageNumber'};
+        headerMain.applyTo = 'default';
+        headerMain.leftType = 'pageNumber';
       }
       else {
-        headerMain = {applyTo: 'default', leftType: 'none'};
+        headerMain.applyTo = 'default';
+        headerMain.leftType = 'none';
       }
       if (this.configOptions.headerRight == 'headerRightPaperTitle' || this.configOptions.headerRight == 'headerRightOtherText') {
-        headerMain['rightType'] = 'text';
-        headerMain['right'] = this.configOptions.headerRightInput;
+        headerMain.rightType = 'text';
+        headerMain.right = this.configOptions.headerRightInput;
       }
       else if (this.configOptions.headerRight == 'headerRightPageNumber') {
-        headerMain['rightType'] = 'pageNumber';
+        headerMain.rightType = 'pageNumber';
       }
       else {
-        headerMain['rightType'] = 'none';
+        headerMain.rightType = 'none';
       }
-      this.paperObj['headers']['headers'].push(headerMain)
+      this.paperObj.headers.headers.push(headerMain);
     }
 
     /*Configure Title Info*/
-    this.paperObj['titleInfo']['onOwnPage'] = this.configOptions.titleInfoPos == 'titleInfoSeparatePage';
+    this.paperObj.titleInfo.onOwnPage = this.configOptions.titleInfoPos == 'titleInfoSeparatePage';
     let titleAlign = '';
     if (this.configOptions.titleInfoAlign == 'titleInfoAlignLeft') {
       titleAlign = 'left';
@@ -274,8 +291,10 @@ export class WriteButton {
     else if (this.configOptions.titleInfoAlign == 'titleInfoAlignRight') {
       titleAlign = 'right';
     }
-    this.paperObj['titleInfo']['alignment'] = titleAlign;
+    this.paperObj.titleInfo.alignment = titleAlign;
     //font, size, bold, underline, and italicize needed
+
+    
   }
 
   parseContent() {
