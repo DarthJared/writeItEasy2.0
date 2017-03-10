@@ -13,6 +13,24 @@
                         </ng-container>
                     </div>                
                 </div>
+                <div class="radioGroup" *ngIf="field.inputType == 'fontSelect'">
+                    <div class="fieldTitle">{{field.displayName}}</div>
+                    <hr>
+                    <select class="fieldOptions" [(ngModel)]="paperSettings[field.name]" (change)="sendConfigObj();">
+                        <option *ngFor="#option of fontsService.options">
+                            {{option}}
+                        </option>
+                    </select>
+                </div>
+                <div class="radioGroup" *ngIf="field.inputType == 'fontSizeSelect'">
+                    <div class="fieldTitle">{{field.displayName}}</div>
+                    <hr>
+                    <select class="fieldOptions" [(ngModel)]="paperSettings[field.name]" (change)="sendConfigObj()">
+                        <option *ngFor="#option of fontsService.sizes">
+                            {{option}}
+                        </option>
+                    </select>
+                </div>
                 <div class="textInput" *ngIf="field.inputType == 'text'">
                     <div class="fieldTitle">{{field.displayName}}</div>
                     <hr>

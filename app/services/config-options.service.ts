@@ -12,6 +12,8 @@ export class ConfigOptionService {
         includeAbstractSummary: true,
         includeConclusion: true,
         includeReferencesWorksCited: true,
+        titleInfoFont: '',
+        titleInfoFontSize: '',
         titleInfoIncludeTitle: true,
         titleInfoIncludeName: true,
         titleInfoIncludeClass: false,
@@ -20,6 +22,8 @@ export class ConfigOptionService {
         titleInfoIncludeOtherText: false,
         titleInfoAlign: 'titleInfoAlignCenter',
         titleInfoPos: 'titleInfoSeparatePage',
+        headerFont: '',
+        headerFontSize: '',
         headerLeft: 'headerLeftPaperTitle',
         headerLeftInput: 'My Paper',
         headerRight: 'headerRightPageNumber',
@@ -37,6 +41,8 @@ export class ConfigOptionService {
         bodyIncludeSectionLabels: false,
         conclusionOwnPage: false,
         conclusionIncludeLabel: false,
+        referencesFont: '',
+        referencesFontSize: '',
         referencesOwnPage: false,
         referencesIncludeLabel: false,
         referencesLabelInput: ''
@@ -105,6 +111,16 @@ export class ConfigOptionService {
                 title: 'Title Info',
                 hideUntil: 'Include Title',
                 fields: [
+                    {
+                        name: 'titleInfoFont',
+                        displayName: 'Font',
+                        inputType: 'fontSelect'
+                    },
+                    {
+                        name: 'titleInfoFontSize',
+                        displayName: 'Font Size',
+                        inputType: 'fontSizeSelect'
+                    },
                     {
                         name: 'titleInfoInclude',
                         displayName: 'Include with Title Info',
@@ -177,7 +193,17 @@ export class ConfigOptionService {
                 name: 'header',
                 title: 'Header',
                 hideUntil: 'Include Header',
-                fields: [                    
+                fields: [    
+                    {
+                        name: 'headerFont',
+                        displayName: 'Font',
+                        inputType: 'fontSelect'
+                    },
+                    {
+                        name: 'headerFontSize',
+                        displayName: 'Font Size',
+                        inputType: 'fontSizeSelect'
+                    },                
                     {
                         name: 'headerLeft',
                         displayName: 'Left',
@@ -379,6 +405,16 @@ export class ConfigOptionService {
                 title: 'References / Works Cited',
                 hideUntil: 'Include References/Works Cited',
                 fields: [
+                    {
+                        name: 'referencesFont',
+                        displayName: 'Font',
+                        inputType: 'fontSelect'
+                    },
+                    {
+                        name: 'referencesFontSize',
+                        displayName: 'Font Size',
+                        inputType: 'fontSizeSelect'
+                    },
                     {
                         name: 'referencesOwnPage',
                         displayName: 'Separate Page',

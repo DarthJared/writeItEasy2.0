@@ -1,9 +1,10 @@
 import {Component, OnChanges, Output, EventEmitter} from "angular2/core";
 import {ConfigOptionService} from "./../services/config-options.service";
+import {FontsService} from "./../services/fonts.service";
 
 @Component({
    selector: 'config-bar',
-   providers: [ConfigOptionService],
+   providers: [ConfigOptionService, FontsService],
    templateUrl: './app/config-bar/config-bar.component.html',
    styleUrls: ['./app/config-bar/config-bar.component.css']
 })
@@ -16,7 +17,7 @@ export class ConfigBar implements OnChanges {
 
   paperSettings: any = {};
 
-  constructor(private configOptions: ConfigOptionService) { 
+  constructor(private configOptions: ConfigOptionService, private fontsService: FontsService) { 
     this.paperSettings = this.configOptions.paperSettings;
     // console.log("started");
   }  

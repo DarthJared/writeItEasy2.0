@@ -186,8 +186,8 @@ export class WriteButton {
     this.paperObj.headers.includeHeaders = this.configOptions.includeHeader;
     if (this.configOptions.includeHeader) {
       this.paperObj.headers.diffFirstPage = this.configOptions.headerDifferentFirstPage;
-      //font and size needed
-      // this.paperObj['headers']['headers'] = []; 
+      this.paperObj.headers.font = this.configOptions.headerFont;
+      this.paperObj.headers.fontSize = this.configOptions.headerFontSize;
       if (this.configOptions.headerDifferentFirstPage) {
         let headerFirst = JSON.parse(JSON.stringify(this.headerObj));
         if (this.configOptions.headerMoreDifferent) {
@@ -274,28 +274,34 @@ export class WriteButton {
     }
 
     /*Configure Title Info*/
-    this.paperObj.titleInfo.onOwnPage = this.configOptions.titleInfoPos == 'titleInfoSeparatePage';
-    let titleAlign = '';
-    if (this.configOptions.titleInfoAlign == 'titleInfoAlignLeft') {
-      titleAlign = 'left';
+    if (this.configOptions.includeTitle) {
+      this.paperObj.titleInfo.onOwnPage = this.configOptions.titleInfoPos == 'titleInfoSeparatePage';
+      let titleAlign = '';
+      if (this.configOptions.titleInfoAlign == 'titleInfoAlignLeft') {
+        titleAlign = 'left';
+      }
+      else if (this.configOptions.titleInfoAlign == 'titleInfoAlignCenter') {
+        titleAlign = 'center';
+      }
+      else if (this.configOptions.titleInfoAlign == 'titleInfoAlignRight') {
+        titleAlign = 'right';
+      }
+      this.paperObj.titleInfo.alignment = titleAlign;
+      this.paperObj.titleInfo.font = this.configOptions.titleInfoFont;
+      this.paperObj.titleInfo.fontSize = this.configOptions.titleInfoFontSize;
+      //bold, underline, and italicize needed
+      //title fields still not passed in
     }
-    else if (this.configOptions.titleInfoAlign == 'titleInfoAlignCenter') {
-      titleAlign = 'center';
-    }
-    else if (this.configOptions.titleInfoAlign == 'titleInfoAlignRight') {
-      titleAlign = 'right';
-    }
-    this.paperObj.titleInfo.alignment = titleAlign;
-    //font, size, bold, underline, and italicize needed
-    //title fields still not passed in
 
     /*Summary / Abstract*/
-    this.paperObj.summaryAbstract.onOwnPage = this.configOptions.summaryOwnPage;
-    if (this.configOptions.summaryIncludeSectionLabel) {
-      this.paperObj.summaryAbstract.includeLabel = true;
-      //insert label text
-      //handle font, size, bold, underline, and italicize
-      //handle alignment and position
+    if (this.configOptions.includeSummaryAbstract) {
+      this.paperObj.summaryAbstract.onOwnPage = this.configOptions.summaryOwnPage;
+      if (this.configOptions.summaryIncludeSectionLabel) {
+        this.paperObj.summaryAbstract.includeLabel = true;
+        //insert label text
+        //handle font, size, bold, underline, and italicize
+        //handle alignment and position
+      }
     }
     //handle paragraphs
 
@@ -304,28 +310,35 @@ export class WriteButton {
     //handle between sections
 
     /*Conclusion*/
-    this.paperObj.conclusion.onOwnPage = this.configOptions.conclusionOwnPage;
-    if (this.configOptions.conclusionIncludeLabel) {
-      this.paperObj.conclusion.includeLabel = true;
-      //insert label text
-      //handle font, size, bold, underline, and italicize
-      //handle alignment and position
+    if (this.configOptions.includeConclusion) {
+      this.paperObj.conclusion.onOwnPage = this.configOptions.conclusionOwnPage;
+      if (this.configOptions.conclusionIncludeLabel) {
+        this.paperObj.conclusion.includeLabel = true;
+        //insert label text
+        //handle font, size, bold, underline, and italicize
+        //handle alignment and position
+      }
+      //handle paragraphs
     }
-    //handle paragraphs
 
     /*References*/
-    this.paperObj.references.onOwnPage = this.configOptions.referencesOwnPage;
-    //handle alignment (left, center, right)
-    //handle hanging indent
-    //handle font, size, and spacing
-    if (this.configOptions.referencesIncludeLabel) {
-      this.paperObj.references.includeLabel = true;
-      this.paperObj.references.label.labelText = this.configOptions.referencesLabelInput;
-      //handle font, size, bold, underline, and italicize
-      //handle alignment and position
+    if (this.configOptions.includeReferencesWorksCited) {
+      this.paperObj.references.onOwnPage = this.configOptions.referencesOwnPage;
+      //handle alignment (left, center, right)
+      //handle hanging indent
+      this.paperObj.references.font = this.configOptions.referencesFont;
+      this.paperObj.references.fontSize = this.configOptions.referencesFontSize;
+      //handle spacing
+      if (this.configOptions.referencesIncludeLabel) {
+        this.paperObj.references.includeLabel = true;
+        this.paperObj.references.label.labelText = this.configOptions.referencesLabelInput;
+        this.paperObj.references.label.font = this.configOptions.referencesFont;
+        this.paperObj.references.label.fontSize = this.configOptions.referencesFontSize;        
+        //handle bold, underline, and italicize
+        //handle alignment and position
+      }
+      //handle references
     }
-    //handle references
-
   }
 
   parseContent() {
