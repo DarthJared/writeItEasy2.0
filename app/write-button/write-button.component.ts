@@ -178,14 +178,8 @@ export class WriteButton {
     // this.docwriterService.writeDocument(this.samplePaperObj);
   }
 
-  parseConfig() {
-    //add apaMla?
-    //add bodyBetweenSections
-    //add support for none in headers
-    this.paperObj['conclusion']['includeLabel'] = this.configOptions.conclusionIncludeLabels;
-    this.paperObj['conclusion']['onOwnPage'] = this.configOptions.conclusionOwnPage;
-     
-    this.paperObj['title'] = this.configOptions.paperTitle;
+  parseConfig() {     
+    this.paperObj.title = this.configOptions.paperTitle;
     //author needed?
 
     /*Configure Header*/
@@ -293,8 +287,45 @@ export class WriteButton {
     }
     this.paperObj.titleInfo.alignment = titleAlign;
     //font, size, bold, underline, and italicize needed
+    //title fields still not passed in
 
-    
+    /*Summary / Abstract*/
+    this.paperObj.summaryAbstract.onOwnPage = this.configOptions.summaryOwnPage;
+    if (this.configOptions.summaryIncludeSectionLabel) {
+      this.paperObj.summaryAbstract.includeLabel = true;
+      //insert label text
+      //handle font, size, bold, underline, and italicize
+      //handle alignment and position
+    }
+    //handle paragraphs
+
+    /*Paper Body*/
+    //handle sections and paragraphs
+    //handle between sections
+
+    /*Conclusion*/
+    this.paperObj.conclusion.onOwnPage = this.configOptions.conclusionOwnPage;
+    if (this.configOptions.conclusionIncludeLabel) {
+      this.paperObj.conclusion.includeLabel = true;
+      //insert label text
+      //handle font, size, bold, underline, and italicize
+      //handle alignment and position
+    }
+    //handle paragraphs
+
+    /*References*/
+    this.paperObj.references.onOwnPage = this.configOptions.referencesOwnPage;
+    //handle alignment (left, center, right)
+    //handle hanging indent
+    //handle font, size, and spacing
+    if (this.configOptions.referencesIncludeLabel) {
+      this.paperObj.references.includeLabel = true;
+      this.paperObj.references.label.labelText = this.configOptions.referencesLabelInput;
+      //handle font, size, bold, underline, and italicize
+      //handle alignment and position
+    }
+    //handle references
+
   }
 
   parseContent() {
@@ -354,7 +385,7 @@ export class WriteButton {
       label: {			
         labelText: "Summary",
         font: "Times New Roman",
-              fontSize: 12,
+        fontSize: 12,
         bold: true,
         underline: false,
         italicize: false,
@@ -365,7 +396,7 @@ export class WriteButton {
       [	
         {
           alignment: "left",
-                  spacing: 2,
+          spacing: 2,
           topIndent: 1,
           bottomIndent: 0,
           formatSections:
@@ -398,7 +429,7 @@ export class WriteButton {
         },
         {
           alignment: "left",
-                  spacing: 2,
+          spacing: 2,
           topIndent: 1,
           bottomIndent: 0,
           formatSections:
@@ -424,7 +455,7 @@ export class WriteButton {
           label: {			
             labelText: "Section 1",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -2243,7 +2274,7 @@ export class WriteButton {
       label: {			
         labelText: "Conclusion",
         font: "Times New Roman",
-              fontSize: 12,
+        fontSize: 12,
         bold: true,
         underline: false,
         italicize: false,
@@ -2307,16 +2338,16 @@ export class WriteButton {
     references: {
       onOwnPage: true,
       includeLabel: true,
-          alignment: "left",
-          topIndent: 0,
-          bottomIndent: 1,
-          fontSize: 12,
+      alignment: "left",
+      topIndent: 0,
+      bottomIndent: 1,
+      fontSize: 12,
       font: "Times New Roman",
-          spacing: 2,
+      spacing: 2,
       label: {			
         labelText: "References",
         font: "Times New Roman",
-              fontSize: 12,
+        fontSize: 12,
         bold: true,
         underline: false,
         italicize: false,
