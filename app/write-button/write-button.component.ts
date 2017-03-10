@@ -466,7 +466,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -499,7 +499,7 @@ export class WriteButton {
             },
             {
               alignment: "center",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -516,7 +516,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -556,7 +556,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsection 1",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -567,7 +567,7 @@ export class WriteButton {
           [	
             {
               alignment: "right",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -600,7 +600,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -617,7 +617,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -657,7 +657,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsubsection 1",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -668,7 +668,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -701,7 +701,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -718,7 +718,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -758,7 +758,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsection 2",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -769,7 +769,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -802,7 +802,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -819,7 +819,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -859,7 +859,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsubsection 1",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -870,7 +870,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -903,7 +903,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -920,7 +920,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -960,7 +960,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsubsection 2",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -971,7 +971,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1004,7 +1004,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1021,7 +1021,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1061,7 +1061,7 @@ export class WriteButton {
           label: {			
             labelText: "Section 2",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -1072,7 +1072,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1105,7 +1105,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1122,7 +1122,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1162,7 +1162,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsection 1",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -1173,7 +1173,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1206,7 +1206,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1223,7 +1223,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1263,7 +1263,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsubsection 1",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -1274,7 +1274,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1307,7 +1307,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1324,7 +1324,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1364,7 +1364,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsection 2",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -1375,7 +1375,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1408,7 +1408,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1425,7 +1425,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1465,7 +1465,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsubsection 1",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -1476,7 +1476,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1509,7 +1509,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1526,7 +1526,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1566,7 +1566,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsubsection 2",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -1577,7 +1577,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1610,7 +1610,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1627,7 +1627,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1667,7 +1667,7 @@ export class WriteButton {
           label: {			
             labelText: "Section 3",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -1678,7 +1678,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1711,7 +1711,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1728,7 +1728,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1768,7 +1768,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsection 1",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -1779,7 +1779,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1812,7 +1812,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1829,7 +1829,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1869,7 +1869,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsubsection 1",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -1880,7 +1880,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1913,7 +1913,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1930,7 +1930,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -1970,7 +1970,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsection 2",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -1981,7 +1981,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -2014,7 +2014,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -2031,7 +2031,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -2071,7 +2071,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsubsection 1",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -2082,7 +2082,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -2115,7 +2115,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -2132,7 +2132,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -2172,7 +2172,7 @@ export class WriteButton {
           label: {			
             labelText: "Subsubsection 2",
             font: "Times New Roman",
-                      fontSize: 12,
+            fontSize: 12,
             bold: true,
             underline: false,
             italicize: false,
@@ -2183,7 +2183,7 @@ export class WriteButton {
           [	
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -2216,7 +2216,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -2233,7 +2233,7 @@ export class WriteButton {
             },
             {
               alignment: "left",
-                          spacing: 2,
+              spacing: 2,
               topIndent: 1,
               bottomIndent: 0,
               formatSections:
@@ -2285,7 +2285,7 @@ export class WriteButton {
       [	
         {
           alignment: "left",
-                  spacing: 2,
+          spacing: 2,
           topIndent: 1,
           bottomIndent: 0,
           formatSections:
@@ -2318,7 +2318,7 @@ export class WriteButton {
         },
         {
           alignment: "left",
-                  spacing: 2,
+          spacing: 2,
           topIndent: 1,
           bottomIndent: 0,
           formatSections:
