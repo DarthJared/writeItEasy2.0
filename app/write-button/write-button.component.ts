@@ -291,6 +291,7 @@ export class WriteButton {
       this.paperObj.titleInfo.fontSize = this.configOptions.titleInfoFontSize;
       //bold, underline, and italicize needed
       //title fields still not passed in
+
     }
 
     /*Summary / Abstract*/
@@ -328,14 +329,33 @@ export class WriteButton {
       //handle hanging indent
       this.paperObj.references.font = this.configOptions.referencesFont;
       this.paperObj.references.fontSize = this.configOptions.referencesFontSize;
-      //handle spacing
+      let spacing = 2;
+      if (this.configOptions.spacing =='singleSpace') {
+        spacing = 1;
+      }
+      else if (this.configOptions.spacing == 'oneAndHalfSpace') {
+        spacing = 1.5;
+      }
+      else if (this.configOptions.spacing == 'doubleSpace') {
+        spacing = 2;
+      }      
+      this.paperObj.references.spacing = spacing;
       if (this.configOptions.referencesIncludeLabel) {
         this.paperObj.references.includeLabel = true;
         this.paperObj.references.label.labelText = this.configOptions.referencesLabelInput;
         this.paperObj.references.label.font = this.configOptions.referencesFont;
         this.paperObj.references.label.fontSize = this.configOptions.referencesFontSize;        
-        //handle bold, underline, and italicize
-        //handle alignment and position
+        let align = "";
+        if (this.configOptions.referencesLabelAlign == 'referencesLabelAlignLeft') {
+          align = "left";
+        }
+        else if (this.configOptions.referencesLabelAlign == 'referencesLabelAlignCenter') {
+          align = "center";
+        }
+        else if (this.configOptions.referencesLabelAlign == 'referencesLabelAlignRight') {
+          align = "right";
+        }
+        this.paperObj.references.label.alignment = align;
       }
       //handle references
     }
@@ -2364,8 +2384,7 @@ export class WriteButton {
         bold: true,
         underline: false,
         italicize: false,
-        alignment: "center",
-        position: "lineBefore"
+        alignment: "center"
       },	
       citations: [
         {

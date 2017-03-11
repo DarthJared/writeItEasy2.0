@@ -98,9 +98,52 @@
     width: 100%;
 }
 
-textInputField {
+.upDownCell {
+    width: 20px;
+}
+
+.textInputField {
     font-size: 12px !important;
-    width: 170px !important;
+    width: 130px !important;
+}
+
+.updownArrows {
+    display: inline;
+
+}
+
+.upArrow {
+    -webkit-transform: rotate(270deg);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.upArrow:hover {
+    color: #888888;
+}
+
+.upArrow:active {
+    color: #555555;
+}
+
+.downArrow {
+    -webkit-transform: rotate(90deg);
+    font-size: 20px;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+.downArrow:hover {
+    color: #888888;
+}
+
+.downArrow:active {
+    color: #555555;
+}
+
+.reorderOption {
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 hr {

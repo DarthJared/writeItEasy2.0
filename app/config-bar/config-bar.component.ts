@@ -22,6 +22,74 @@ export class ConfigBar implements OnChanges {
     // console.log("started");
   }  
 
+  getOrderedInfo(info) {
+    let ordered = [];
+    for (let i = 0; i < info.length; i++) {
+      for (let j = 0; j < info.length; j++) {
+        if (info[j].index == i) {
+          ordered.push(info[j]);
+        }
+      }
+    }
+    return ordered;
+  }
+
+  moveUp(fieldName, optionName, index) {
+    if (index > 0) {
+      for (let i = 0; i < this.configOptions.options.sections.length; i++) {
+        let section = this.configOptions.options.sections[i];
+        for (let j = 0; j < section.fields.length; j++) {
+          if (section.fields[j].name == fieldName) {          
+            for (let k = 0; k < section.fields[j]['options'].length; k++) {
+              let option = section.fields[j]['options'][k];            
+              if (option.index == index - 1) {
+                option.index++;
+              }
+            }
+            for (let k = 0; k < section.fields[j]['options'].length; k++) {
+              let option = section.fields[j]['options'][k];
+              if (option.name == optionName) {
+                option.index--;
+              }
+            }
+            for (let k = 0; k < section.fields[j]['options'].length; k++) {
+              let option = section.fields[j]['options'][k];
+              this.paperSettings[option.name + 'Index'] = option.index;          
+            }
+          }        
+        }
+      }
+    }
+  }
+  
+  moveDown(fieldName, optionName, index) {    
+    for (let i = 0; i < this.configOptions.options.sections.length; i++) {
+      let section = this.configOptions.options.sections[i];
+      for (let j = 0; j < section.fields.length; j++) {
+        if (section.fields[j].name == fieldName) {
+          if (index < section.fields[j]['options'].length - 1) {
+            for (let k = 0; k < section.fields[j]['options'].length; k++) {
+              let option = section.fields[j]['options'][k];            
+              if (option.index == index + 1) {
+                option.index--;
+              }
+            }
+            for (let k = 0; k < section.fields[j]['options'].length; k++) {
+              let option = section.fields[j]['options'][k];
+              if (option.name == optionName) {
+                option.index++;
+              }
+            }
+            for (let k = 0; k < section.fields[j]['options'].length; k++) {
+              let option = section.fields[j]['options'][k];
+              this.paperSettings[option.name + 'Index'] = option.index;          
+            }
+          }
+        }
+      }    
+    }
+  }
+
   correctEnabled(toCheck) {
     let correct = true;
     for (let i = 0; i < toCheck.length; i++) {

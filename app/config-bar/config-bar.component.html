@@ -38,12 +38,27 @@
                         <input (change)="sendConfigObj()" class="textInputField option" style="font-size: 12px !important; width: 170px !important;" type="text" [placeholder]="field.placeholder" [(ngModel)]="paperSettings[field.name]">
                     </div>
                 </div>
-                <div class="checkboxGroup" *ngIf="field.inputType == 'checkbox' && !field.reorderable">
+                <div class="checkboxGroup" *ngIf="field.inputType == 'checkbox'">
                     <div class="fieldTitle">{{field.displayName}}</div>
                     <hr>
                     <div class="fieldOptions">
                         <ng-container *ngFor="#option of field.options">
                             <input class="option" type="checkbox" [checked]="paperSettings[option.name]" (change)="paperSettings[option.name] = !paperSettings[option.name]; sendConfigObj();">{{option.title}}
+                            <br>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="checkboxGroup" *ngIf="field.inputType == 'reorderableCheck'">
+                    <div class="fieldTitle">{{field.displayName}}</div>
+                    <hr>
+                    <div class="fieldOptions">
+                        <ng-container *ngFor="#option of getOrderedInfo(field.options)">
+                            <div class="updownArrows">
+                                <i class="material-icons upArrow" (click)="moveUp(field.name, option.name, option.index); sendConfigObj();">play_arrow</i>
+                                <input class="reorderOption" type="checkbox" [checked]="paperSettings[option.name]" (change)="paperSettings[option.name] = !paperSettings[option.name]; sendConfigObj();">{{option.title}}
+                                <br>
+                                <i class="material-icons downArrow" (click)="moveDown(field.name, option.name, option.index); sendConfigObj();">play_arrow</i>
+                            </div>                            
                             <br>
                         </ng-container>
                     </div>

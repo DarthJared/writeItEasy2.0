@@ -7,6 +7,7 @@ export class ConfigOptionService {
     paperSettings = {
         paperTitle: 'My Paper',
         apaMla: 'apa',
+        spacing: 'doubleSpace',
         includeTitle: true,
         includeHeader: true,
         includeAbstractSummary: true,
@@ -20,6 +21,12 @@ export class ConfigOptionService {
         titleInfoIncludeProfessor: false,
         titleInfoIncludeSchool: true,
         titleInfoIncludeOtherText: false,
+        titleInfoIncludeTitleIndex: 0,
+        titleInfoIncludeNameIndex: 1,
+        titleInfoIncludeClassIndex: 2,
+        titleInfoIncludeProfessorIndex: 3,
+        titleInfoIncludeSchoolIndex: 4,
+        titleInfoIncludeOtherTextIndex: 5,
         titleInfoAlign: 'titleInfoAlignCenter',
         titleInfoPos: 'titleInfoSeparatePage',
         headerFont: '',
@@ -45,7 +52,8 @@ export class ConfigOptionService {
         referencesFontSize: '',
         referencesOwnPage: false,
         referencesIncludeLabel: false,
-        referencesLabelInput: ''
+        referencesLabelInput: '',
+        referencesLabelAlign: ''
     };
 
     options = {
@@ -73,6 +81,25 @@ export class ConfigOptionService {
                             {
                                 name: 'mla',
                                 title: 'MLA'
+                            }
+                        ]
+                    },
+                    {
+                        name: 'spacing',
+                        displayName: 'Spacing',
+                        inputType: 'radio',
+                        options: [
+                            {
+                                name: 'singleSpace',
+                                title: 'Single'
+                            },
+                            {
+                                name: 'oneAndHalfSpace',
+                                title: '1.5'
+                            },
+                            {
+                                name: 'doubleSpace',
+                                title: 'Double'
                             }
                         ]
                     },
@@ -124,32 +151,43 @@ export class ConfigOptionService {
                     {
                         name: 'titleInfoInclude',
                         displayName: 'Include with Title Info',
-                        inputType: 'checkbox',
-                        reorderable: true,
+                        inputType: 'reorderableCheck',
                         options: [
                             {
                                 name: 'titleInfoIncludeTitle',
-                                title: 'Include Title'
+                                title: 'Include Title',
+                                display: 'title',
+                                index: 0                            
                             },
                             {
                                 name: 'titleInfoIncludeName',
-                                title: 'Include Name'
+                                title: 'Include Name',
+                                display: 'name',
+                                index: 1
                             },
                             {
                                 name: 'titleInfoIncludeClass',
-                                title: 'Include Class'
+                                title: 'Include Class',
+                                display: 'class',
+                                index: 2
                             },
                             {
                                 name: 'titleInfoIncludeProfessor',
-                                title: 'Include Professor'
+                                title: 'Include Professor',
+                                display: 'professor',
+                                index: 3
                             },
                             {
                                 name: 'titleInfoIncludeSchool',
-                                title: 'Include School'
+                                title: 'Include School',
+                                display: 'school',
+                                index: 4
                             },
                             {
                                 name: 'titleInfoIncludeOtherText',
-                                title: 'Include Other Text'
+                                title: 'Include Other Text',
+                                display: 'other text',
+                                index: 5
                             }
                         ]
                     },
@@ -431,6 +469,25 @@ export class ConfigOptionService {
                                 title: 'Include Section Label',
                                 placeholder: 'Enter Section Label here...',
                                 type: 'text'
+                            }
+                        ]
+                    },
+                    {
+                        name: 'referencesLabelAlign',
+                        displayName: 'Align References Section Label',
+                        inputType: 'radio',
+                        options: [
+                            {
+                                name: 'referencesLabelAlignLeft',
+                                title: 'Left'
+                            },
+                            {
+                                name: 'referencesLabelAlignCenter',
+                                title: 'Center'
+                            },
+                            {
+                                name: 'referencesLabelAlignRight',
+                                title: 'Right'
                             }
                         ]
                     }
