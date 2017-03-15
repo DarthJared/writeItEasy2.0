@@ -1,5 +1,113 @@
 <div class="backDrop opened">
     <div class="innerWrap">
-        <paper-back *ngIf="configOptions.includeAbstractSummary" [content]="contentObj"></paper-back>        
+        <div *ngIf="this.configOptions.includeTitle && this.configOptions.titleInfoPos === 'titleInfoSeparatePage'" class="paperBack">
+            <ng-container *ngFor="#index of [0, 1, 2, 3, 4, 5]; #i = index">
+                <ng-container *ngIf="configOptions.titleInfoIncludeClassIndex === i" >
+                    <div class="labelLabel">
+                        Section Label
+                    </div>
+                    <div class="firstLabelWrap">
+                        <div contenteditable="true" class="labelEnter" id="editting"></div>
+                        <div class="labelOptions">
+                            ...
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="configOptions.titleInfoIncludeNameIndex === i" >
+
+                </ng-container>
+                <ng-container *ngIf="configOptions.titleInfoIncludeOtherIndex === i" >
+
+                </ng-container>
+                <ng-container *ngIf="configOptions.titleInfoIncludeProfessorIndex === i" >
+
+                </ng-container>
+                <ng-container *ngIf="configOptions.titleInfoIncludeSchoolIndex === i" >
+
+                </ng-container>
+                <ng-container *ngIf="configOptions.titleInfoIncludeTitleIndex === i" >
+
+                </ng-container>
+            </ng-container>
+        </div>
+        <div *ngIf="this.configOptions.includeAbstractSummary && this.configOptions.summaryOwnPage" class="paperBack">
+            
+        </div>
+        <ng-container *ngIf="this.configOptions.bodyBetweenSections === 'bodyEachSectionOwnPage'">
+            
+        </ng-container>
+        <div *ngIf="this.configOptions.bodyBetweenSections !== 'bodyEachSectionOwnPage'" class="paperBack">
+            
+        </div>
+        <div *ngIf="this.configOptions.includeConclusion && this.configOptions.conclusionOwnPage" class="paperBack">
+            
+        </div>
+
+
+
+
+        <div class="paperBack">
+            <div class="labelLabel">
+                Section Label
+            </div>
+            <div class="firstLabelWrap">
+                <div contenteditable="true" class="labelEnter" id="editting"></div>
+                <div class="labelOptions">
+                    ...
+                </div>
+            </div>
+            <div class="contentLabel">
+                Paragraph
+            </div>
+            <div class="contentOptions">
+                ...
+            </div>
+            <div class="contentEnterWrap">
+                <p contenteditable="true" class="contentEnter" id="editting">H<em>el</em>lo</p>		
+            </div>
+            
+
+
+            <div class="labelLabel">
+                Section Label
+            </div>
+            <div class="labelWrap">
+                <div contenteditable="true" class="labelEnter" id="editting"></div>
+                <div class="labelOptions">
+                    ...
+                </div>
+            </div>
+            <div class="contentLabel">
+                Paragraph
+            </div>
+            <div class="contentOptions">
+                ...
+            </div>
+            <div class="contentEnterWrap">
+                <p contenteditable="true" class="contentEnter"  id="editting">H<em>el</em>lo</p>		
+            </div>
+
+
+
+
+            <div class="labelLabel">
+                Section Label
+            </div>
+            <div class="labelWrap">
+                <div contenteditable="true" class="labelEnter" id="editting"></div>
+                <div class="labelOptions">
+                    ...
+                </div>
+            </div>
+            <div class="contentLabel">
+                Paragraph
+            </div>
+            <div class="contentOptions">
+                ...
+            </div>
+            <div class="contentEnterWrap">
+                <p contenteditable="true" class="contentEnter"  id="editting">H<em>el</em>lo</p>		
+            </div>
+        </div>      
     </div>
 </div>
