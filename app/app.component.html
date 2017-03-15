@@ -2,5 +2,5 @@
 <button type="button" (click)="writeIt()">Write It!</button>-->
     <config-bar (configObj)="updateConfig($event)"></config-bar>
     <format-bar></format-bar>
-    <content-enter></content-enter>
+    <content-enter [configOptions]="configOptions"></content-enter>
     <write-button [configOptions]="configOptions"></write-button>

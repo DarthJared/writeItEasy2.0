@@ -1,5 +1,5 @@
 <div class="backDrop opened">
     <div class="innerWrap">
-        <paper-back></paper-back>        
+        <paper-back *ngIf="configOptions.includeAbstractSummary" [content]="contentObj"></paper-back>        
     </div>
 </div>
