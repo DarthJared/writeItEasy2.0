@@ -1,45 +1,87 @@
 <div class="backDrop opened">
     <div class="innerWrap">
-        <div *ngIf="this.configOptions.includeTitle && this.configOptions.titleInfoPos === 'titleInfoSeparatePage'" class="paperBack">
-            <ng-container *ngFor="#index of [0, 1, 2, 3, 4, 5]; #i = index">
-                <ng-container *ngIf="configOptions.titleInfoIncludeClassIndex === i" >
-                    <div class="labelLabel">
-                        Section Label
+        <div *ngIf="configOptions.includeTitle && configOptions.titleInfoPos === 'titleInfoSeparatePage'" class="paperBack">
+            <div [style.padding-left]="configOptions.titleInfoAlign === 'titleInfoAlignCenter' ? 'calc(50% - 100px)' : configOptions.titleInfoAlign === 'titleInfoAlignLeft' ? null : 'calc(100% - 220px)'" class="titlePageWrap">
+                <ng-container *ngFor="#index of [0, 1, 2, 3, 4, 5]; #i = index">
+                    <div *ngIf="configOptions.titleInfoIncludeClassIndex === i" >
+                        <div class="titleLabelLabel">
+                            Class
+                        </div>
+                        <div class="titleInfoWrap">
+                            <div contenteditable="true" class="labelEnter" id="editting"></div>
+                            <div class="labelOptions">
+                                ...
+                            </div>
+                        </div>
                     </div>
-                    <div class="firstLabelWrap">
-                        <div contenteditable="true" class="labelEnter" id="editting"></div>
-                        <div class="labelOptions">
-                            ...
+                    <div *ngIf="configOptions.titleInfoIncludeNameIndex === i" >
+                        <div class="titleLabelLabel">
+                            Name
+                        </div>
+                        <div class="titleInfoWrap">
+                            <div contenteditable="true" class="labelEnter" id="editting"></div>
+                            <div class="labelOptions">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="configOptions.titleInfoIncludeOtherIndex === i" >
+                        <div class="titleLabelLabel">
+                            Other
+                        </div>
+                        <div class="titleInfoWrap">
+                            <div contenteditable="true" class="labelEnter" id="editting"></div>
+                            <div class="labelOptions">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="configOptions.titleInfoIncludeProfessorIndex === i" >
+                        <div class="titleLabelLabel">
+                            Professor
+                        </div>
+                        <div class="titleInfoWrap">
+                            <div contenteditable="true" class="labelEnter" id="editting"></div>
+                            <div class="labelOptions">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="configOptions.titleInfoIncludeSchoolIndex === i" >
+                        <div class="titleLabelLabel">
+                            School
+                        </div>
+                        <div class="titleInfoWrap">
+                            <div contenteditable="true" class="labelEnter" id="editting"></div>
+                            <div class="labelOptions">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="configOptions.titleInfoIncludeTitleIndex === i" >
+                        <div class="titleLabelLabel">
+                            Title
+                        </div>
+                        <div class="titleInfoWrap">
+                            <div contenteditable="true" class="labelEnter" id="editting"></div>
+                            <div class="labelOptions">
+                                ...
+                            </div>
                         </div>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="configOptions.titleInfoIncludeNameIndex === i" >
-
-                </ng-container>
-                <ng-container *ngIf="configOptions.titleInfoIncludeOtherIndex === i" >
-
-                </ng-container>
-                <ng-container *ngIf="configOptions.titleInfoIncludeProfessorIndex === i" >
-
-                </ng-container>
-                <ng-container *ngIf="configOptions.titleInfoIncludeSchoolIndex === i" >
-
-                </ng-container>
-                <ng-container *ngIf="configOptions.titleInfoIncludeTitleIndex === i" >
-
-                </ng-container>
-            </ng-container>
+            </div>
         </div>
-        <div *ngIf="this.configOptions.includeAbstractSummary && this.configOptions.summaryOwnPage" class="paperBack">
+        <div *ngIf="configOptions.includeAbstractSummary && configOptions.summaryOwnPage" class="paperBack">
             
         </div>
-        <ng-container *ngIf="this.configOptions.bodyBetweenSections === 'bodyEachSectionOwnPage'">
+        <ng-container *ngIf="configOptions.bodyBetweenSections === 'bodyEachSectionOwnPage'">
             
         </ng-container>
-        <div *ngIf="this.configOptions.bodyBetweenSections !== 'bodyEachSectionOwnPage'" class="paperBack">
+        <div *ngIf="configOptions.bodyBetweenSections !== 'bodyEachSectionOwnPage'" class="paperBack">
             
         </div>
-        <div *ngIf="this.configOptions.includeConclusion && this.configOptions.conclusionOwnPage" class="paperBack">
+        <div *ngIf="configOptions.includeConclusion && configOptions.conclusionOwnPage" class="paperBack">
             
         </div>
 
