@@ -3,7 +3,7 @@
         <div *ngIf="configOptions.includeTitle && configOptions.titleInfoPos === 'titleInfoSeparatePage'" class="paperBack">
             <div [style.padding-left]="configOptions.titleInfoAlign === 'titleInfoAlignCenter' ? 'calc(50% - 100px)' : configOptions.titleInfoAlign === 'titleInfoAlignLeft' ? null : 'calc(100% - 220px)'" class="titlePageWrap">
                 <ng-container *ngFor="#index of [0, 1, 2, 3, 4, 5]; #i = index">
-                    <div *ngIf="configOptions.titleInfoIncludeClassIndex === i" >
+                    <div *ngIf="configOptions.titleInfoIncludeClassIndex === i && configOptions.titleInfoIncludeClass" >
                         <div class="titleLabelLabel">
                             Class
                         </div>
@@ -14,7 +14,7 @@
                             </div>
                         </div>
                     </div>
-                    <div *ngIf="configOptions.titleInfoIncludeNameIndex === i" >
+                    <div *ngIf="configOptions.titleInfoIncludeNameIndex === i  && configOptions.titleInfoIncludeName" >
                         <div class="titleLabelLabel">
                             Name
                         </div>
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                     </div>
-                    <div *ngIf="configOptions.titleInfoIncludeOtherIndex === i" >
+                    <div *ngIf="configOptions.titleInfoIncludeOtherTextIndex === i && configOptions.titleInfoIncludeOtherText" >
                         <div class="titleLabelLabel">
                             Other
                         </div>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                     </div>
-                    <div *ngIf="configOptions.titleInfoIncludeProfessorIndex === i" >
+                    <div *ngIf="configOptions.titleInfoIncludeProfessorIndex === i && configOptions.titleInfoIncludeProfessor" >
                         <div class="titleLabelLabel">
                             Professor
                         </div>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    <div *ngIf="configOptions.titleInfoIncludeSchoolIndex === i" >
+                    <div *ngIf="configOptions.titleInfoIncludeSchoolIndex === i && configOptions.titleInfoIncludeSchool" >
                         <div class="titleLabelLabel">
                             School
                         </div>
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-                    <div *ngIf="configOptions.titleInfoIncludeTitleIndex === i" >
+                    <div *ngIf="configOptions.titleInfoIncludeTitleIndex === i && configOptions.titleInfoIncludeTitle" >
                         <div class="titleLabelLabel">
                             Title
                         </div>
@@ -73,7 +73,24 @@
             </div>
         </div>
         <div *ngIf="configOptions.includeAbstractSummary && configOptions.summaryOwnPage" class="paperBack">
-            
+            <div class="labelLabel">
+                Abstract / Summary Label
+            </div>
+            <div class="firstLabelWrap">
+                <div contenteditable="true" class="labelEnter" id="editting"></div>
+                <div class="labelOptions">
+                    ...
+                </div>
+            </div>
+            <div class="contentLabel">
+                Abstract / Summary
+            </div>
+            <div class="contentOptions" style="margin-right: -131px;">
+                ...
+            </div>
+            <div class="contentEnterWrap">
+                <p contenteditable="true" class="contentEnter" id="editting">H<em>el</em>lo</p>		
+            </div>
         </div>
         <ng-container *ngIf="configOptions.bodyBetweenSections === 'bodyEachSectionOwnPage'">
             

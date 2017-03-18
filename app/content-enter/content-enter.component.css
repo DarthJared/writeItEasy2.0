@@ -105,7 +105,7 @@
     padding-bottom: 2px; 
     padding-top: 2px;
     margin-top: 18px; 
-    margin-right: 20px;
+    margin-right: 22px;
 }
 
 .contentOptions {
@@ -130,11 +130,11 @@
 
 .contentEnterWrap {
     padding-top: 19px; 
-    width: calc(100% - 20px);
+    width: calc(100% - 22px);
 }
 
 .contentEnter {
-    height:100px; 
+    min-height: 350px; 
     border: solid 1px rgba(0, 0, 0, 0.2); 
     border-radius: 2px;
 }
