@@ -73,10 +73,10 @@
             </div>
         </div>
         <div *ngIf="configOptions.includeAbstractSummary && configOptions.summaryOwnPage" class="paperBack">
-            <div class="labelLabel">
+            <div class="labelLabel" *ngIf="configOptions.summaryIncludeSectionLabel">
                 Abstract / Summary Label
             </div>
-            <div class="firstLabelWrap">
+            <div class="firstLabelWrap" *ngIf="configOptions.summaryIncludeSectionLabel">
                 <div contenteditable="true" class="labelEnter" id="editting"></div>
                 <div class="labelOptions">
                     ...
@@ -99,13 +99,30 @@
             
         </div>
         <div *ngIf="configOptions.includeConclusion && configOptions.conclusionOwnPage" class="paperBack">
-            
+            <div class="labelLabel" *ngIf="configOptions.conclusionIncludeLabel">
+                Conclusion Label
+            </div>
+            <div class="firstLabelWrap" *ngIf="configOptions.conclusionIncludeLabel">
+                <div contenteditable="true" class="labelEnter" id="editting"></div>
+                <div class="labelOptions">
+                    ...
+                </div>
+            </div>
+            <div class="contentLabel">
+                Conclusion
+            </div>
+            <div class="contentOptions" style="margin-right: -87px;">
+                ...
+            </div>
+            <div class="contentEnterWrap">
+                <p contenteditable="true" class="contentEnter" id="editting">H<em>el</em>lo</p>		
+            </div>
         </div>
 
 
 
 
-        <div class="paperBack">
+        <!--<div class="paperBack">
             <div class="labelLabel">
                 Section Label
             </div>
@@ -167,6 +184,6 @@
             <div class="contentEnterWrap">
                 <p contenteditable="true" class="contentEnter"  id="editting">H<em>el</em>lo</p>		
             </div>
-        </div>      
+        </div>      -->
     </div>
 </div>
