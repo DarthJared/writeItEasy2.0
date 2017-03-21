@@ -1,0 +1,90 @@
+Title Page (Done)
+-----------
+
+Title Include && Title Own Page
+
+
+
+Summary Page (Done)
+-----------------
+
+Summary Include && Summary Own Page && (!Title Include || Title Own Page)
+
+
+
+Body Pages (Done)
+-------------
+
+Body Own Pages && (!Title Include || Summary Include || Title Own Page)
+
+
+
+Body Page (Done)
+------------
+
+!Body Own Pages && ((!Summary Include && (!Title Include || Title Own Page)) || (Summary Include && Summary Own Page))
+
+
+
+Conclusion Page (Done)
+------------------
+
+Conclusion Include && Conclusion Own Page
+
+
+
+Title and Summary Page (Done)
+----------------------------
+
+Title Include && !Title Own Page && Summary Include && (Summary Own Page || Body Own Pages)
+
+
+
+Summary and Body Page (Done)
+-----------------------------
+
+Summary Include && !Summary Own Page && !Body Own Pages && (!Title Include || Title Own Page)
+
+
+
+Body and Conclusion Page (Done)
+------------------------------
+
+Conclusion Page Include && !Conclusion Own Page && !Body Own Pages && ((Summary Include && Summary Own Page) || (!Summary Include && (!Title Include || Title Own Page)))
+
+
+
+Title, Summary, and Body Page (Done)
+------------------------------------
+
+Title Include && !Title Own Page && Summary Include && !Summary Own Page && !Body Own Pages && (!Conclusion Include || Conclusion Own Page)
+
+
+
+Summary, Body, and Conclusion Page (Done)
+--------------------------------------------
+
+Summary Include && !Summary Own Page && !Body Own Page && Conclusion Include && !Conclusion Own Page && (!Title Include || Title Own Page)
+
+
+
+Title, Summary, Body, and Conclusion Page (Done)
+--------------------------------------------------
+
+Title Include && !Title Own Page && Summary Include && !Summary Own Page && !Body Own Pages && Conclusion Include && !Conclusion Own Page
+
+
+
+Title and Body Page (Done)
+-----------------------
+
+Title Include && !Title Own Page && !Body Own Page && !Summary Include
+
+
+
+Title, Body, and Conclusion Page (Done)
+----------------------------------------
+
+Title Include&& !Title Own Page & !Body Own Page && !Summary Include && Conclusion	Include && !Conclusion Own Page
+
+

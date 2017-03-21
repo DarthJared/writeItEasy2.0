@@ -1,5 +1,6 @@
 <div class="backDrop opened">
     <div class="innerWrap">
+        <!--Title Page-->
         <div *ngIf="configOptions.includeTitle && configOptions.titleInfoPos === 'titleInfoSeparatePage'" class="paperBack">
             <div [style.padding-left]="configOptions.titleInfoAlign === 'titleInfoAlignCenter' ? 'calc(50% - 100px)' : configOptions.titleInfoAlign === 'titleInfoAlignLeft' ? null : 'calc(100% - 220px)'" class="titlePageWrap">
                 <ng-container *ngFor="#index of [0, 1, 2, 3, 4, 5]; #i = index">
@@ -72,32 +73,52 @@
                 </ng-container>
             </div>
         </div>
-        <div *ngIf="configOptions.includeAbstractSummary && configOptions.summaryOwnPage" class="paperBack">
-            <div class="labelLabel" *ngIf="configOptions.summaryIncludeSectionLabel">
-                Abstract / Summary Label
-            </div>
-            <div class="firstLabelWrap" *ngIf="configOptions.summaryIncludeSectionLabel">
-                <div contenteditable="true" class="labelEnter" id="editting"></div>
-                <div class="labelOptions">
+        <!--Summary Page && Title and Summary Page && Summary and Body Page && Title, Summary, and Body Page && Summary, Body, and Conclusion Page && Title, Summary, Body, and Conclusion Page && Title and Body Page && Title, Body, and Conclusion Page-->
+        <!--TODO: Add conditions for this paperback-->
+        <div  class="paperBack">
+            <ng-container *ngIf="configOptions.includeTitle && configOptions.titleInfoPos !== 'titleInfoSeparatePage'">
+                <!--TODO: Add title info here-->                
+            </ng-container>
+            <!--Summary Page-->
+            <ng-container *ngIf="configOptions.includeAbstractSummary">
+                <div class="labelLabel" *ngIf="configOptions.summaryIncludeSectionLabel">
+                    Abstract / Summary Label
+                </div>
+                <div class="firstLabelWrap" *ngIf="configOptions.summaryIncludeSectionLabel">
+                    <div contenteditable="true" class="labelEnter" id="editting"></div>
+                    <div class="labelOptions">
+                        ...
+                    </div>
+                </div>
+                <div class="contentLabel">
+                    Abstract / Summary
+                </div>
+                <div class="contentOptions" style="margin-right: -131px;">
                     ...
                 </div>
-            </div>
-            <div class="contentLabel">
-                Abstract / Summary
-            </div>
-            <div class="contentOptions" style="margin-right: -131px;">
-                ...
-            </div>
-            <div class="contentEnterWrap">
-                <p contenteditable="true" class="contentEnter" id="editting">H<em>el</em>lo</p>		
-            </div>
+                <div class="contentEnterWrap">
+                    <p contenteditable="true" class="contentEnter" id="editting">H<em>el</em>lo</p>		
+                </div>
+            </ng-container>
+            <ng-container *ngIf="configOptions.bodyBetweenSections !== 'bodyEachSectionOwnPage' && !configOptions.summaryOwnPage">
+                <!--TODO: Add body sections-->
+                <ng-container *ngIf="configOptions.includeConclusion && !configOptions.conclusionOwnPage">
+                    <!--TODO: Add conclusion-->
+                </ng-container>
+            </ng-container>            
         </div>
-        <ng-container *ngIf="configOptions.bodyBetweenSections === 'bodyEachSectionOwnPage'">
-            
+        <!--Body Pages-->
+        <ng-container *ngIf="configOptions.bodyBetweenSections === 'bodyEachSectionOwnPage' && (!configOptions.includeTitle || configOptions.titleInfoPos === 'titleInfoSeparatePage' || configOptions.includeAbstractSummary)">
+            <!--TODO: Add page for each body section with possible title at beginning of first page-->            
         </ng-container>
-        <div *ngIf="configOptions.bodyBetweenSections !== 'bodyEachSectionOwnPage'" class="paperBack">
-            
+        <!--Body Page && Body and Conclusion Page-->
+        <div *ngIf="configOptions.bodyBetweenSections !== 'bodyEachSectionOwnPage' && ((!configOptions.includeAbstractSummary && (!configOptions.includeTitle || configOptions.titleInfoPos === 'titleInfoSeparatePage')) || (configOptions.includeAbstractSummary && configOptions.summaryOwnPage))" class="paperBack">
+            <!--TODO: Add body sections-->
+            <ng-container *ngIf="configOptions.includeConclusion && !configOptions.conclusionOwnPage">
+                <!--TODO: Add conclusion-->
+            </ng-container>
         </div>
+        <!--Conclusion Page-->
         <div *ngIf="configOptions.includeConclusion && configOptions.conclusionOwnPage" class="paperBack">
             <div class="labelLabel" *ngIf="configOptions.conclusionIncludeLabel">
                 Conclusion Label
