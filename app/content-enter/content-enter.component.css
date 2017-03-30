@@ -40,8 +40,6 @@
 }
 
 .paperBack {
-    width: calc(100% - 90px);
-    min-width: 360px;
     margin: auto;
     margin-top: 5px;
     margin-bottom: 25px;
@@ -54,19 +52,17 @@
 
 .labelLabel {
     float: left; 
-    font-size: 12px; 
-    padding-right: 5px; 
-    margin-bottom: -15px; 
-    padding-bottom: 0px; 
+    font-size: 12px;  
     font-family: 'OpenSans', Helvetica, Arial, sans-serif; 
     color: #FFFFFF;
+    background-color: #6E6E6E; 
     border-top-left-radius: 5px;
     border-top-right-radius: 5px; 
-    background-color: #6E6E6E; 
     padding-left: 4px; 
     padding-right: 4px; 
     padding-bottom: 2px; 
-    padding-top: 2px;
+    padding-top: 2px;    
+    margin-bottom: -15px; 
     margin-top: 30px;
 }
 
@@ -88,22 +84,20 @@
 }
 
 .contentLabel {
-    text-align: right; 
-    font-size: 12px; 
-    padding-right: 5px; 
-    margin-bottom: -15px; 
-    padding-bottom: 0px; 
+    text-align: right;     
+    float: right; 
+    font-size: 12px;  
     font-family: 'OpenSans', Helvetica, Arial, sans-serif; 
-    color: #FFFFFF;
+    color: #FFFFFF;    
+    background-color: #6E6E6E; 
     border-top-left-radius: 5px;
     border-top-right-radius: 5px; 
-    background-color: #6E6E6E; 
-    float: right; 
     padding-left: 4px; 
     padding-right: 4px; 
     padding-bottom: 2px; 
     padding-top: 2px;
     margin-top: 18px; 
+    margin-bottom: -15px;
     margin-right: 22px;
 }
 
@@ -152,24 +146,51 @@
     padding-top: 17px;
 }
 
+.titleInfoTopWrap {
+    margin-top: 25px;
+    padding-top: 17px;
+}
+
 .titleLabelLabel {
     float: left; 
-    font-size: 12px; 
-    padding-right: 5px; 
-    margin-bottom: -15px; 
-    padding-bottom: 0px; 
+    font-size: 12px;       
     font-family: 'OpenSans', Helvetica, Arial, sans-serif; 
-    color: #FFFFFF;
+    color: #FFFFFF;    
+    background-color: #6E6E6E; 
     border-top-left-radius: 5px;
     border-top-right-radius: 5px; 
-    background-color: #6E6E6E; 
     padding-left: 4px; 
     padding-right: 4px; 
     padding-bottom: 2px; 
     padding-top: 2px;
+    margin-bottom: -15px;
     margin-top: 0px;
 }
 
 .titlePageWrap {
-    padding-top: 130px;
+    padding-top: 200px;
+}
+
+.titlePageTopWrap {
+    padding-top: 0px;
+}
+
+.labelLabelConc {
+    float: left; 
+    font-size: 12px;      
+    font-family: 'OpenSans', Helvetica, Arial, sans-serif; 
+    color: #FFFFFF;    
+    background-color: #6E6E6E;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;  
+    padding-left: 4px; 
+    padding-right: 4px; 
+    padding-bottom: 2px; 
+    padding-top: 2px;
+    margin-bottom: -15px; 
+    margin-top: 14px;
+}
+
+.topLabelWrap {
+    padding-top: 10px;
 }
